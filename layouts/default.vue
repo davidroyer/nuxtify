@@ -27,17 +27,12 @@ import VMobileNav from '@/components/VMobileNav.vue'
 export default {
   components: {
     VDesktopNav,
-    // eslint-disable-next-line vue/no-unused-components
     VMobileNav,
-    // VSiteFooter
     VSiteFooter: () => import('@/components/VSiteFooter.vue')
-    // VMobileNav: () => import('@/components/VMobileNav.vue')
   },
   data() {
     return {
-      clipped: false,
       drawer: false,
-      fixed: false,
       items: [
         {
           title: 'Home',
@@ -55,10 +50,6 @@ export default {
     drawerState() {
       return this.$store.state.drawer
     }
-  },
-  mounted() {
-    // eslint-disable-next-line no-console
-    console.log(this)
   }
 }
 </script>

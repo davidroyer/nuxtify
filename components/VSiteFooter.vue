@@ -44,6 +44,9 @@ export default {
 }
 </script>
 <style scoped>
+.v-footer--fixed {
+  position: relative !important;
+}
 .v-card {
   margin-left: auto;
   margin-right: auto;
