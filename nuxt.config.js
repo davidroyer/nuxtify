@@ -46,6 +46,7 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa'
+    // 'nuxt-svg-loader'
   ],
   /*
   ** Axios module configuration

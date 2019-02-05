@@ -3,25 +3,22 @@
     dark
     app
     height="auto"
-    class="primary pt-4"
+    class="primary pt-2"
   >
     <v-card
       class="primary white--text text-xs-center "
       flat
       tile
     >
-      <!-- <v-card-text>
+      <v-card-text>
         <v-btn
           v-for="icon in icons"
           :key="icon"
-          class="mx-3 white--text"
           icon
         >
-          <v-icon size="24px">
-            {{ icon }}
-          </v-icon>
+          <img width="30px" :src="require(`~/assets/svg-icons/${icon}.svg`)">
         </v-btn>
-      </v-card-text> -->
+      </v-card-text>
 
       <v-card-text class="white--text pt-0">
         Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui.
@@ -37,9 +34,12 @@
 </template>
 
 <script>
+import Facebook from '@/assets/svg-icons/facebook.svg'
+
 export default {
   data: () => ({
-    icons: ['facebook', 'twitter', 'google-plus', 'linkedin', 'instagram']
+    components: { Facebook },
+    icons: ['facebook', 'twitter', 'linkedin']
   })
 }
 </script>
