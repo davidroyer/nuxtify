@@ -2,12 +2,12 @@
 @require '~vuetify/src/stylus/app.styl'
 
 
-.page-enter-active, .page-leave-active {
-  transition: opacity .5s
-}
-.page-enter, .page-leave-active {
-  opacity: 0
-}
+// .page-enter-active, .page-leave-active {
+//   transition: opacity .5s
+// }
+// .page-enter, .page-leave-active {
+//   opacity: 0
+// }
 
 .bounce-enter-active {
   animation: bounce-in .8s;
@@ -36,3 +36,14 @@
   opacity: 0;
   transform: translate(-30px, 0);
 }
+
+  .page-enter-active,
+  .page-leave-active {
+    transition: all 0.45s ease-in-out;
+    transition: all 0.45s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+  .page-enter,
+  .page-leave-active {
+    opacity: 0;
+    transform: translate(10px, 0);
+  }
