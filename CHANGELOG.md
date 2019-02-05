@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/davidroyer/vuxt/compare/v0.4.0...v0.5.0) (2019-02-05)
+
+
+### Features
+
+* **mobile menu:** Adds close icon to mobile menu drawer ([c8d5745](https://github.com/davidroyer/vuxt/commit/c8d5745))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/davidroyer/vuxt/compare/v0.3.0...v0.4.0) (2019-02-05)
 
