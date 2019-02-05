@@ -17,3 +17,11 @@
     </v-flex>
   </v-layout>
 </template>
+
+<script>
+export default {
+  head() {
+    return this.$createSeo(this.$route.name)
+  }
+}
+</script>

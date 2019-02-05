@@ -1,9 +1,14 @@
+import siteConfig from './data/site'
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const pkg = require('./package')
 
 module.exports = {
   mode: 'universal',
-
+  env: {
+    baseUrl: process.env.production
+      ? `${siteConfig.url}/`
+      : 'http://localhost:3000/'
+  },
   /*
   ** Headers of the page
   */
@@ -37,7 +42,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['@/plugins/vuetify'],
+  plugins: ['@/plugins/vuetify', '@/plugins/create-seo'],
 
   /*
   ** Nuxt.js modules

@@ -8,12 +8,12 @@
         </v-btn>
       </v-list-tile>
       <v-list-tile
-        v-for="(item, i) in navItems"
-        :key="i"
+        v-for="(item, key) in nav"
+        :key="key"
         :to="item.to"
         nuxt
       >
-        <v-list-tile-title v-text="item.title" />
+        <v-list-tile-title v-text="item.label" />
       </v-list-tile>
     </v-list>
   </v-navigation-drawer>
@@ -23,7 +23,7 @@
 import { mapState, mapMutations } from 'vuex'
 export default {
   computed: {
-    ...mapState(['drawer', 'navItems']),
+    ...mapState(['drawer', 'nav']),
     drawerState: {
       get() {
         return this.drawer

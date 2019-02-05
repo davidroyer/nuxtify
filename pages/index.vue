@@ -73,6 +73,8 @@
 
 <script>
 export default {
-  components: {}
+  head() {
+    return this.$createSeo(this.$route.name)
+  }
 }
 </script>
