@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/davidroyer/vuxt/compare/v0.5.0...v0.5.1) (2019-02-05)
+
+
+### Performance Improvements
+
+* **fonts:** Adds `nuxt-webfontloader` for Roboto and Material Icons ([6bfdc1a](https://github.com/davidroyer/vuxt/commit/6bfdc1a))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/davidroyer/vuxt/compare/v0.4.0...v0.5.0) (2019-02-05)
 
