@@ -1,7 +1,7 @@
 <template>
   <v-toolbar-items>
     <v-btn
-      v-for="(item, index) in items"
+      v-for="(item, index) in navItems"
       :key="index"
       flat
       :to="item.to"
@@ -13,10 +13,9 @@
 
 <script>
 export default {
-  props: {
-    items: {
-      type: Array,
-      default: () => []
+  computed: {
+    navItems() {
+      return this.$store.state.navItems
     }
   }
 }

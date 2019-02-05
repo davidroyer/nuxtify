@@ -2,7 +2,7 @@
   <v-navigation-drawer v-model="drawerState" temporary right fixed>
     <v-list>
       <v-list-tile
-        v-for="(item, i) in items"
+        v-for="(item, i) in navItems"
         :key="i"
         :to="item.to"
         router
@@ -17,15 +17,8 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 export default {
-  props: {
-    items: {
-      type: Array,
-      default: () => []
-    }
-  },
-
   computed: {
-    ...mapState(['drawer']),
+    ...mapState(['drawer', 'navItems']),
     drawerState: {
       get() {
         return this.drawer
