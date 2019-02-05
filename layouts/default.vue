@@ -20,6 +20,11 @@ export default {
     VSiteContent,
     VSiteHeader,
     VSiteFooter: () => import('@/components/VSiteFooter.vue')
+  },
+
+  mounted() {
+    // eslint-disable-next-line no-console
+    console.log(this.$vuetify)
   }
 }
 </script>

@@ -9,9 +9,11 @@ export const state = () => ({
   site
 })
 export const mutations = {
-  setDev(state, payload) {
-    state.isDev = payload
-  },
+  // setDev(state, payload) {
+  //   state.isDev = payload
+  // },
+
+  setDev: (state, payload) => (state.isDev = payload),
 
   toggleDrawer: toggle('drawer'),
 

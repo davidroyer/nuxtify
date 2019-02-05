@@ -1,12 +1,17 @@
 <template>
   <v-navigation-drawer v-model="drawerState" temporary right fixed>
     <v-list>
+      <v-list-tile>
+        <v-spacer />
+        <v-btn icon color="secondary" @click="toggleDrawer">
+          <v-icon>close</v-icon>
+        </v-btn>
+      </v-list-tile>
       <v-list-tile
         v-for="(item, i) in navItems"
         :key="i"
         :to="item.to"
-        router
-        exact
+        nuxt
       >
         <v-list-tile-title v-text="item.title" />
       </v-list-tile>
