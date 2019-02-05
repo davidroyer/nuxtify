@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/davidroyer/vuxt/compare/v0.3.0...v0.4.0) (2019-02-05)
+
+
+### Bug Fixes
+
+* Adds DS_Store to `.gitignore` ([3a2cb9c](https://github.com/davidroyer/vuxt/commit/3a2cb9c))
+
+
+### Features
+
+* **social icons:** Begins to add social icons in footer ([0bc743f](https://github.com/davidroyer/vuxt/commit/0bc743f))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/davidroyer/vuxt/compare/v0.2.0...v0.3.0) (2019-02-05)
 
