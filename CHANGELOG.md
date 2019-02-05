@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.0"></a>
+# [0.1.0](https://github.com/davidroyer/vuxt/compare/v0.0.1...v0.1.0) (2019-02-05)
+
+
+### Features
+
+* **Releases:** Addes new script to push new release to Github ([fe11062](https://github.com/davidroyer/vuxt/commit/fe11062))
+
+
+
 <a name="0.0.1"></a>
 ## 0.0.1 (2019-02-05)
 
