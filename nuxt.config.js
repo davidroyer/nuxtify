@@ -1,9 +1,9 @@
-import siteConfig from './data/site'
+import siteConfig from './data/site';
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const pkg = require('./package')
 
 module.exports = {
-  mode: 'universal',
+
   env: {
     baseUrl: process.env.production
       ? `${siteConfig.url}/`
