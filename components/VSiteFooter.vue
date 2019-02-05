@@ -5,11 +5,7 @@
     height="auto"
     class="primary pt-2"
   >
-    <v-card
-      class="primary white--text text-xs-center "
-      flat
-      tile
-    >
+    <v-card class="primary white--text text-xs-center " flat tile>
       <v-card-text>
         <v-btn
           v-for="icon in icons"
