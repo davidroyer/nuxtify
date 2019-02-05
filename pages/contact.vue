@@ -2,7 +2,7 @@
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
       <div class="text-xs-center">
-        <h2>Text Center</h2>
+        <h2>Contact Page</h2>
       </div>
       <v-card>
         <v-card-title class="headline">
@@ -61,9 +61,9 @@
             color="primary"
             flat
             nuxt
-            to="/contact"
+            to="/"
           >
-            Contact Page
+            Home
           </v-btn>
         </v-card-actions>
       </v-card>
