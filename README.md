@@ -1,6 +1,8 @@
-# nuxt-testing
+# Vuxt
 
-> My grand Nuxt.js project
+> Nuxt Boilerplate with Vuetify
+
+[📖 **Release Notes**](./CHANGELOG.md)
 
 ## Build Setup
 
