@@ -1,13 +1,8 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
+  <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
       <div class="text-xs-center">
-        <logo />
-        <vuetify-logo />
+        <h2>Text Center</h2>
       </div>
       <v-card>
         <v-card-title class="headline">
@@ -77,13 +72,7 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  }
+  components: {}
 }
 </script>

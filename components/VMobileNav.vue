@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 export default {
   props: {
     items: {
@@ -24,18 +25,19 @@ export default {
   },
 
   computed: {
-    // drawerState: {
-    //   get() {
-    //     return this.$store.state.drawer
-    //   },
-    //   set(val) {
-    //     this.$store.commit('setDrawer', !this.$store.state.drawer)
-    //     // this.$store.commit(val)
-    //   }
-    // },
-    drawerState() {
-      return this.$store.state.drawer
+    ...mapState(['drawer']),
+    drawerState: {
+      get() {
+        return this.drawer
+      },
+      set(val) {
+        this.setDrawer(val)
+      }
     }
+  },
+
+  methods: {
+    ...mapMutations(['setDrawer', 'toggleDrawer'])
   }
 }
 </script>
