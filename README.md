@@ -2,7 +2,12 @@
 
 > Nuxt Boilerplate with Vuetify
 
-[📖 **Release Notes**](./CHANGELOG.md)
+## Demo
+
+:computer: https://vuxt.netlify.com/
+
+## For Version Information
+## [📖 **Release Notes**](./CHANGELOG.md)
 
 ## Build Setup
 
@@ -33,3 +38,7 @@ For detailed explanation on how things work, checkout [Nuxt.js docs](https://nux
 - perf
 - test
 - chore
+
+## Notes
+
+To get correct styling for using ` `` `, you must use `\` before it
