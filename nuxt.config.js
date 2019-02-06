@@ -41,8 +41,8 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['~/assets/style/app.styl'],
 
+  css: ['~/assets/style/app.styl'],
   /*
   ** Plugins to load before mounting the App
   */
@@ -74,6 +74,9 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    analyze: {
+      analyzerMode: 'static'
+    },
     transpile: ['vuetify/lib'],
     plugins: [new VuetifyLoaderPlugin()],
     loaders: {
