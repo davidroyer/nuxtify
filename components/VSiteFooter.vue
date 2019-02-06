@@ -17,7 +17,14 @@
         </v-btn>
       </v-card-text>
 
-      <v-card-text class="white--text pt-0">
+      <v-card-text class="pt-0">
+        <h3>Email Us</h3>
+        <a class="accent--text" href="mailto:site-email@yoursiteurl.com?Subject=Hello" target="_top">
+          info@yoursiteurl.com
+        </a>
+      </v-card-text>
+
+      <v-card-text class="white--text pt-0">     
         Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui.
       </v-card-text>
 
@@ -26,7 +33,8 @@
       <v-card-text class="white--text">
         &copy; {{ new Date().getFullYear() }}
       </v-card-text>
-    </v-card>   
+      </v-card-text>   
+    </v-card>
   </v-footer>
 </template>
 
