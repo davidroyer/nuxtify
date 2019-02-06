@@ -8,6 +8,8 @@ module.exports = {
       ? `${siteConfig.url}/`
       : 'http://localhost:3000/'
   },
+
+  watch: ['~/data/*'],
   /*
   ** Headers of the page
   */
