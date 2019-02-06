@@ -19,7 +19,7 @@
 
       <v-card-text class="pt-0">
         <h3>Email Us</h3>
-        <a class="accent--text" href="mailto:site-email@yoursiteurl.com?Subject=Hello" target="_top">
+        <a class="email-link white--text darken-2" href="mailto:site-email@yoursiteurl.com?Subject=Hello" target="_top">
           info@yoursiteurl.com
         </a>
       </v-card-text>
@@ -56,5 +56,9 @@ export default {
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
+}
+
+.email-link {
+  font-size: 1.05rem;
 }
 </style>
