@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/davidroyer/vuxt/compare/v0.6.0...v0.7.0) (2019-02-06)
+
+
+### Bug Fixes
+
+* **accessibility:** Fixes image accessibility issues ([b9d228b](https://github.com/davidroyer/vuxt/commit/b9d228b))
+* **accessibility:** Removes accessibility issues with buttons ([491a1c8](https://github.com/davidroyer/vuxt/commit/491a1c8))
+
+
+### Features
+
+* **styles:** Allows overwritting stylus variables inside \`app.styl\` ([753f59b](https://github.com/davidroyer/vuxt/commit/753f59b))
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/davidroyer/vuxt/compare/v0.5.1...v0.6.0) (2019-02-06)
 
