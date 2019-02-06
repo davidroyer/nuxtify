@@ -5,7 +5,11 @@
     </v-toolbar-title>
     <v-spacer />
     <v-desktop-nav class="hidden-sm-and-down" />
-    <v-toolbar-side-icon class="hidden-md-and-up" @click="$store.commit('toggleDrawer')" />
+    <v-toolbar-side-icon 
+      aria-label="Toggle menu"
+      class="hidden-md-and-up"
+      @click="$store.commit('toggleDrawer')"
+    />
   </v-toolbar>
 </template>
 

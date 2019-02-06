@@ -3,7 +3,7 @@
     <v-list>
       <v-list-tile style="margin-bottom: -10px;">
         <v-spacer />
-        <v-btn icon color="secondary" class="lighten-5 mr-0" @click="toggleDrawer">
+        <v-btn icon color="secondary" class="lighten-5 mr-0" aria-label="Close Menu" @click="toggleDrawer">
           <v-icon>close</v-icon>
         </v-btn>
       </v-list-tile>

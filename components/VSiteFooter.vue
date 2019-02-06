@@ -10,6 +10,7 @@
         <v-btn
           v-for="icon in icons"
           :key="icon"
+          :aria-label="`Link to our ${icon} page`"
           icon
         >
           <img width="30px" :src="require(`~/assets/svg-icons/${icon}.svg`)">
