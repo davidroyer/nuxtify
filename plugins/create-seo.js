@@ -1,31 +1,47 @@
+/* eslint-disable no-console */
 import siteNav from '@/data/nav'
+import { handleRouteMetaArray, setupRoutesSeoProperties } from '@/utils/seo'
 import Vue from 'vue'
-// What a monster :O
+import { createDefaultMetaArray } from '../utils/seo'
+
+setupRoutesSeoProperties(siteNav)
+
 Vue.prototype.$createSeo = function(slug, baseMetaArray = []) {
   return Object.entries(siteNav[slug].seo).reduce((acc, [key, actualValue]) => {
-    // eslint-disable-next-line no-console
-    // console.log('TCL: key, actualValue', key, actualValue)
-    // eslint-disable-next-line no-console
-    console.log('acc.title: ', acc.title ? acc.title : 'no title')
+    const title = siteNav[slug].label
+    const description = siteNav[slug].description || null
+    const defaultMetaArray = createDefaultMetaArray(
+      title,
+      process.env.baseUrl,
+      this.$route.path.substr(1)
+    )
 
-    const headTitle = acc.title
-      ? {
-          hid: 'og:title',
-          name: 'og:title',
-          property: 'og:title',
-          content: acc.title
-        }
+    /**
+     * If description property exists then return the array of meta objects.
+     * Else return null
+     */
+    const metaArrayForRouteDescription = description
+      ? [
+          {
+            hid: 'description',
+            name: 'description',
+            property: 'description',
+            content: description
+          },
+          {
+            hid: 'og:description',
+            name: 'og:description',
+            property: 'og:description',
+            content: description
+          }
+        ]
       : null
 
-    const defaultMetaArray = [
-      headTitle,
-      {
-        name: 'og:url',
-        content: `${process.env.baseUrl}${this.$route.path.substr(1)}`
-      }
-    ]
+    /**
+     * Add meta for description if the property exist for the route
+     */
+    handleRouteMetaArray(defaultMetaArray, metaArrayForRouteDescription)
 
-    // If meta, add base array (likely og:image) and defaultArray containing og:url
     const valueForKey =
       key !== 'meta'
         ? actualValue
