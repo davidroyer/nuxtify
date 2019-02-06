@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/davidroyer/vuxt/compare/v0.5.1...v0.6.0) (2019-02-06)
+
+
+### Features
+
+* Adds watch to data directory ([9196124](https://github.com/davidroyer/vuxt/commit/9196124))
+* Allows for easy SEO setup with $createSeo plugin ([18d6353](https://github.com/davidroyer/vuxt/commit/18d6353))
+
+
+
 <a name="0.5.1"></a>
 ## [0.5.1](https://github.com/davidroyer/vuxt/compare/v0.5.0...v0.5.1) (2019-02-05)
 
