@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import meta from './config/meta'
+import siteMeta from './config/meta'
 import siteConfig from './config/site'
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 // const pkg = require('./package')
@@ -21,7 +21,6 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    // title: siteConfig.title,
     /**
      * If title is not set for page or blank then we don't need the hyphen
      */
@@ -29,7 +28,7 @@ module.exports = {
       return titleChunck ? `${titleChunck} - Site Title` : `Site Title`
     },
 
-    meta,
+    meta: siteMeta,
 
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
