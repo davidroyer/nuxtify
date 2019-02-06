@@ -4,9 +4,21 @@ import Vue from 'vue'
 Vue.prototype.$createSeo = function(slug, baseMetaArray = []) {
   return Object.entries(siteNav[slug].seo).reduce((acc, [key, actualValue]) => {
     // eslint-disable-next-line no-console
-    console.log('TCL: key, actualValue', key, actualValue)
+    // console.log('TCL: key, actualValue', key, actualValue)
+    // eslint-disable-next-line no-console
+    console.log('acc.title: ', acc.title ? acc.title : 'no title')
+
+    const headTitle = acc.title
+      ? {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: acc.title
+        }
+      : null
 
     const defaultMetaArray = [
+      headTitle,
       {
         name: 'og:url',
         content: `${process.env.baseUrl}${this.$route.path.substr(1)}`

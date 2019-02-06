@@ -21,7 +21,10 @@
 <script>
 export default {
   head() {
-    return this.$createSeo(this.$route.name)
+    return {
+      // title: 'TEST TITLE'
+      ...this.$createSeo(this.$route.name)
+    }
   }
 }
 </script>

@@ -7,19 +7,20 @@ export default {
     }
   },
   about: {
-    label: 'About Us new',
+    label: 'About Us',
     to: '/about',
     seo: {
+      title: 'About Us seo.title',
       meta: [
         {
           name: ['description', 'og:description'],
           content:
             'Learn more about the people behind Developmint and get to know us before we get to know you!'
-        },
-        {
-          name: ['title', 'og:title'],
-          content: 'About us1 - Site Meta Right-Side'
         }
+        // {
+        //   name: ['title', 'og:title'],
+        //   content: 'About us1 - Site Meta Right-Side'
+        // }
       ]
     }
   },
@@ -27,6 +28,7 @@ export default {
     label: 'Contact',
     to: '/contact',
     seo: {
+      title: 'Contact Us seo.title',
       meta: [
         {
           name: ['description', 'og:description'],

@@ -1,9 +1,8 @@
-import siteConfig from './data/site';
+import siteConfig from './data/site'
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const pkg = require('./package')
 
 module.exports = {
-
   env: {
     baseUrl: process.env.production
       ? `${siteConfig.url}/`
@@ -13,7 +12,14 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    // title: siteConfig.title,
+    /**
+     * If title is not set for page or blank then we don't need the hyphen
+     */
+    titleTemplate: titleChunck => {
+      return titleChunck ? `${titleChunck} - Site Title` : `Site Title`
+    },
+    // titleTemplate,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
