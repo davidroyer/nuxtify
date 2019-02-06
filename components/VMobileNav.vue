@@ -1,9 +1,9 @@
 <template>
   <v-navigation-drawer v-model="drawerState" temporary right fixed>
     <v-list>
-      <v-list-tile>
+      <v-list-tile style="margin-bottom: -10px;">
         <v-spacer />
-        <v-btn icon color="secondary" @click="toggleDrawer">
+        <v-btn icon color="secondary" class="lighten-5 mr-0" @click="toggleDrawer">
           <v-icon>close</v-icon>
         </v-btn>
       </v-list-tile>
@@ -21,6 +21,7 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
+
 export default {
   computed: {
     ...mapState(['drawer', 'nav']),

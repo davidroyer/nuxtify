@@ -1,6 +1,8 @@
 <template>
   <v-toolbar dark color="primary" fixed app>
-    <v-toolbar-title v-text="$store.state.site.title" />
+    <v-toolbar-title>
+      <nuxt-link to="/" v-text="$store.state.site.title" />
+    </v-toolbar-title>
     <v-spacer />
     <v-desktop-nav class="hidden-sm-and-down" />
     <v-toolbar-side-icon class="hidden-md-and-up" @click="$store.commit('toggleDrawer')" />
@@ -16,4 +18,8 @@ export default {
 </script>
 
 <style scoped>
+.v-toolbar__title a {
+  color: inherit;
+  text-decoration: none;
+}
 </style>
