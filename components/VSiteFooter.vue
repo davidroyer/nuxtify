@@ -13,7 +13,7 @@
           :aria-label="`Link to our ${icon} page`"
           icon
         >
-          <img width="30px" :src="require(`~/assets/svg-icons/${icon}.svg`)">
+          <img width="30px" :alt="`Image icon for ${icon}`" role="presentation" :src="require(`~/assets/svg-icons/${icon}.svg`)">
         </v-btn>
       </v-card-text>
 
