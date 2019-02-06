@@ -1,7 +1,8 @@
 export default {
   index: {
     label: 'Site Home',
-    to: '/'
+    to: '/',
+    title: false
   },
   about: {
     label: 'About Us',

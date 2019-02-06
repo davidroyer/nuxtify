@@ -1,14 +1,17 @@
 /* eslint-disable no-console */
 import siteNav from '@/data/nav'
-import { handleRouteMetaArray, setupRoutesSeoProperties } from '@/utils/seo'
+import {
+  createDefaultMetaArray,
+  handleRouteMetaArray,
+  setupRoutesSeoProperties
+} from '@/utils/seo'
 import Vue from 'vue'
-import { createDefaultMetaArray } from '../utils/seo'
 
 setupRoutesSeoProperties(siteNav)
 
 Vue.prototype.$createSeo = function(slug, baseMetaArray = []) {
   return Object.entries(siteNav[slug].seo).reduce((acc, [key, actualValue]) => {
-    const title = siteNav[slug].label
+    const title = siteNav[slug].title === false ? null : siteNav[slug].label
     const description = siteNav[slug].description || null
     const defaultMetaArray = createDefaultMetaArray(
       title,

@@ -1,6 +1,6 @@
 <template>
   <v-layout>
-    <v-flex text-xs-center>
+    <v-flex>
       <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, facere?</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum nam omnis tempore sit corrupti perferendis, ipsum excepturi quasi consectetur. Ea, consequatur numquam. Veniam animi nesciunt reiciendis ea quos dolorum voluptatibus.</p>
       <p>Aut dolores nihil pariatur nisi expedita dolorem magnam similique! Aut tempore accusantium atque molestias cupiditate, non vero nulla? Sit repellendus, debitis fugit omnis repudiandae odio dolorum deserunt temporibus voluptate aperiam?</p>

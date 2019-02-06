@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 export const setupRoutesSeoProperties = routesObject => {
   for (const route in routesObject) {
-    console.log('TCL: routesObject', routesObject)
+    // console.log('TCL: routesObject', routesObject)
 
     routesObject[route].seo = {}
     routesObject[route].seo.title = routesObject[route].label

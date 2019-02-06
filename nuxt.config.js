@@ -1,15 +1,22 @@
-import siteConfig from './data/site'
+/* eslint-disable no-console */
+import meta from './config/meta'
+import siteConfig from './config/site'
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
-const pkg = require('./package')
+// const pkg = require('./package')
+
+/**
+ * Analytics ID will be set here so it's not exposed in store
+ */
 
 module.exports = {
   env: {
-    baseUrl: process.env.production
-      ? `${siteConfig.url}/`
-      : 'http://localhost:3000/'
+    baseUrl:
+      process.env.NODE_ENV === 'production'
+        ? `${siteConfig.url}/`
+        : 'http://localhost:3000/'
   },
 
-  watch: ['~/data/*'],
+  watch: ['~/data/*', '~/config/*'],
   /*
   ** Headers of the page
   */
@@ -21,20 +28,10 @@ module.exports = {
     titleTemplate: titleChunck => {
       return titleChunck ? `${titleChunck} - Site Title` : `Site Title`
     },
-    // titleTemplate,
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-      // {
-      //   rel: 'stylesheet',
-      //   href:
-      //     'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
-      // }
-    ]
+
+    meta,
+
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   /*
