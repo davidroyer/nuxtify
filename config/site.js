@@ -7,7 +7,7 @@ export default {
 
   shortName: 'Nuxtify',
 
-  title: 'Site Title From @/config',
+  title: 'Site Title',
 
   url: 'https://nuxtify.netlify.com'
 }

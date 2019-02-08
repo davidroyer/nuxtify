@@ -1,6 +1,6 @@
 export default {
   index: {
-    label: 'Site Home',
+    label: 'Home',
     to: '/',
     title: false
   },
