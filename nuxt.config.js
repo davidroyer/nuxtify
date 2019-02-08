@@ -1,14 +1,10 @@
-/* eslint-disable no-console */
 import siteMeta from './config/meta'
 import siteConfig from './config/site'
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
-// const pkg = require('./package')
-
-/**
- * Analytics ID will be set here so it's not exposed in store
- */
 
 module.exports = {
+  watch: ['~/data/*', '~/config/*'],
+
   env: {
     baseUrl:
       process.env.NODE_ENV === 'production'
@@ -16,10 +12,6 @@ module.exports = {
         : 'http://localhost:3000/'
   },
 
-  watch: ['~/data/*', '~/config/*'],
-  /*
-  ** Headers of the page
-  */
   head: {
     /**
      * If title is not set for page or blank then we don't need the hyphen
@@ -27,9 +19,7 @@ module.exports = {
     titleTemplate: titleChunck => {
       return titleChunck ? `${titleChunck} - Site Title` : `Site Title`
     },
-
     meta: siteMeta,
-
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
@@ -41,42 +31,34 @@ module.exports = {
   /*
   ** Global CSS
   */
-
   css: ['~/assets/style/app.styl'],
-  /*
-  ** Plugins to load before mounting the App
-  */
+
   plugins: ['@/plugins/vuetify', '@/plugins/create-seo'],
 
-  /*
-  ** Nuxt.js modules
-  */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    'nuxt-webfontloader'
-  ],
+  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', 'nuxt-webfontloader'],
 
-  /*
-  ** Axios module configuration
-  */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
+  /**
+   * Config for nuxt-webfontloader
+   * @link https://github.com/nuxt-webfontloader
+   */
   webfontloader: {
     google: {
       families: ['Roboto:300,400,500,700', 'Material Icons'] // Loads Lato font with weights 400 and 700
     }
   },
+
+  /**
+   * Analytics ID will be set here so it's not exposed in store
+   */
+
   /*
   ** Build configuration
   */
   build: {
-    analyze: {
-      analyzerMode: 'static'
-    },
     transpile: ['vuetify/lib'],
     plugins: [new VuetifyLoaderPlugin()],
     loaders: {
