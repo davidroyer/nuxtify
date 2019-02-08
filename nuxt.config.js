@@ -17,6 +17,10 @@ module.exports = {
         : 'http://localhost:3000/'
   },
 
+  generate: {
+    fallback: true
+  },
+
   watch: ['~/data/*', '~/config/*'],
   /*
   ** Headers of the page
