@@ -15,5 +15,17 @@ module.exports = {
     'prettier'
   ],
   // add your custom rules here
-  rules: {}
+  rules: {
+    "vue/no-v-html": 0,
+    // "vue/max-attributes-per-line": [
+    //   0,
+    //   {
+    //     singleline: 10,
+    //     multiline: {
+    //       max: 10,
+    //       allowFirstLine: true
+    //     }
+    //   }
+    // ]    
+  }
 }
