@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import siteNav from '@/data/nav'
+import siteNav from '@/config/navigation'
 import {
   createDefaultMeta,
   createRouteMeta,

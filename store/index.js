@@ -1,19 +1,16 @@
-// import navItems from '@/data/nav-items'
+import navigationRoutes from '@/config/navigation'
 import site from '@/config/site'
-import nav from '@/data/nav'
 
 export const state = () => ({
   drawer: false,
   isDev: null,
-  nav,
+  navigationRoutes,
   site
 })
 
 export const mutations = {
   setDev: (state, payload) => (state.isDev = payload),
-
   setDrawer: (state, payload) => (state.drawer = payload),
-
   toggleDrawer: (state, payload) => (state.drawer = !state.drawer)
 }
 
@@ -22,5 +19,3 @@ export const actions = {
     commit('setDev', isDev)
   }
 }
-
-export const getters = {}

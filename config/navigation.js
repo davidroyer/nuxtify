@@ -2,7 +2,8 @@ export default {
   index: {
     label: 'Home',
     to: '/',
-    title: false
+    title: false,
+    labelToTitle: false // Use this in future
   },
   about: {
     label: 'About Us',
