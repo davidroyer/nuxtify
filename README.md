@@ -1,6 +1,6 @@
 # Vuxt
 
-> Nuxt Boilerplate with Vuetify
+> Nuxt Boilerplate with Vuetify MARKDOWN
 
 ## Demo
 
