@@ -8,6 +8,8 @@ const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
  * Analytics ID will be set here so it's not exposed in store
  */
 
+//  test
+
 module.exports = {
   env: {
     baseUrl:
