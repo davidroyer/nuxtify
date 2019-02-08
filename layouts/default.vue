@@ -8,8 +8,6 @@
 </template>
 
 <script>
-/* eslint-disable vue/no-unused-components */
-
 import VMobileNav from '@/components/VMobileNav.vue'
 import VSiteContent from '@/components/VSiteContent.vue'
 import VSiteHeader from '@/components/VSiteHeader.vue'
@@ -20,11 +18,6 @@ export default {
     VSiteContent,
     VSiteHeader,
     VSiteFooter: () => import('@/components/VSiteFooter.vue')
-  },
-
-  mounted() {
-    // eslint-disable-next-line no-console
-    console.log(this.$vuetify)
   }
 }
 </script>

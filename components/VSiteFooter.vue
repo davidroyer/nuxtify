@@ -38,11 +38,8 @@
 </template>
 
 <script>
-import Facebook from '@/assets/svg-icons/facebook.svg'
-
 export default {
   data: () => ({
-    components: { Facebook },
     icons: ['facebook', 'twitter', 'linkedin']
   })
 }
