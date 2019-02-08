@@ -2,8 +2,8 @@
 import path from 'path';
 import siteMeta from './config/meta';
 import siteConfig from './config/site';
+import { generateRoutes } from './services/blog/generate'
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
-// const pkg = require('./package')
 
 /**
  * Analytics ID will be set here so it's not exposed in store
@@ -18,7 +18,12 @@ module.exports = {
   },
 
   generate: {
-    fallback: true
+    fallback: true,
+    routes: function() {
+      const blogPosts = require('./data/blog.json')
+      const routes = generateRoutes(blogPosts)
+      return routes
+    }
   },
 
   watch: ['~/config/*'],
@@ -80,9 +85,9 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    analyze: {
-      analyzerMode: 'static'
-    },
+    // analyze: {
+    //   analyzerMode: 'static'
+    // },
     transpile: ['vuetify/lib'],
     plugins: [new VuetifyLoaderPlugin()],
     loaders: {

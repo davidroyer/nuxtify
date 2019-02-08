@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "dev:blog": "node g-manifest.js",
+    "dev:blog": "yarn dev:json & yarn dev",
+    "dev:json": "node services/blog",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -18,6 +19,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
+    "markdown-it": "^8.4.2",
     "nuxt": "^2.3.4",
     "nuxt-webfontloader": "^1.0.0",
     "vuetify": "^1.3.14",

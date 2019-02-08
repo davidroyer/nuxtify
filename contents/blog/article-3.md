@@ -10,7 +10,9 @@ description: |
   How I created my new website with portfolio and blog in two languages. What technology I used and why.
 ---
 
-## Why did I re-do my website with Nuxt?
+## Why did I re-do my website with Nuxt? CHECK
+
+### NEW LINE
 
 Although some of you already know me, I am [Marina Aísa](https://twitter.com/MarinaAisa), UX Engineer (design and front-end) and I currently work at [Holaluz](https://www.holaluz.com/en).
 

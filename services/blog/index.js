@@ -2,15 +2,16 @@
 const jetpack = require('fs-jetpack')
 const sane = require('sane')
 const fm = require('front-matter')
-const { titlize } = require('./utils/titlize')
+const { titlize } = require('./utils')
+const {md} = require('./md')
+
 const CONTENT_DIR = 'contents'
 const BLOG_CONTENT_DIR = 'blog'
-
 const BLOG_CONTENT_PATH = `${CONTENT_DIR}/${BLOG_CONTENT_DIR}`
+
 /**
  * Watcher
  */
-
 createBlogJsonFile(BLOG_CONTENT_PATH)
 
 const watcher = sane(BLOG_CONTENT_PATH)
@@ -41,9 +42,13 @@ function createJsonFileContent(filepath) {
     .replace(`${BLOG_CONTENT_PATH}/`, '')
     .replace('.md', '')
   const mdFileData = fm(mdFile)
-
+  
+  
+  mdFileData.html = md.render(mdFileData.body);
   mdFileData.slug = mdFileName
   mdFileData.titleTest = titlize(mdFileName)
+  delete mdFileData.body
+
   return mdFileData
 }
 
@@ -55,16 +60,19 @@ function createBlogJsonFile(BLOG_CONTENT_PATH) {
       matching: '**/*.md'
     })
     .forEach(function(filepath) {
-      const mdFile = jetpack.read(`${filepath}`)
-      const mdFileData = fm(mdFile)
-      const mdFileName = filepath
+        const mdFile = jetpack.read(`${filepath}`)
+        const mdFileData = fm(mdFile)
+        const mdFileName = filepath
         .replace(`${BLOG_CONTENT_PATH}/`, '')
-        .replace('.md', '')
-
-      mdFileData.slug = mdFileName
-      mdFileData.titleTest = titlize(mdFileName)
-
-      jsonData.push(mdFileData)
+        .replace('.md', '');
+        
+    mdFileData.html = md.render(mdFileData.body);
+    mdFileData.slug = mdFileName
+    mdFileData.titleTest = titlize(mdFileName)
+    delete mdFileData.body
+      
+    jetpack.file(`data/blog/${mdFileName}.json`, { content: mdFileData })
+    jsonData.push(mdFileData)
     })
   jetpack.file('data/blog.json', { content: jsonData })
 }
