@@ -1,10 +1,8 @@
 /* eslint-disable no-console */
-import siteMeta from './config/meta';
-import siteConfig from './config/site';
+import siteMeta from './config/meta'
+import siteConfig from './config/site'
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 // const pkg = require('./package')
-
-// test again
 
 /**
  * Analytics ID will be set here so it's not exposed in store
