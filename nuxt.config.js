@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-import path from 'path'
-import siteMeta from './config/meta'
-import siteConfig from './config/site'
+import path from 'path';
+import siteMeta from './config/meta';
+import siteConfig from './config/site';
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 // const pkg = require('./package')
 
@@ -21,7 +21,8 @@ module.exports = {
     fallback: true
   },
 
-  watch: ['~/data/*', '~/config/*'],
+  watch: ['~/config/*'],
+  // watch: ['~/data/*', '~/config/*'],
   /*
   ** Headers of the page
   */

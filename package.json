@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
+    "dev:blog": "node g-manifest.js",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -42,6 +43,7 @@
     "highlight.js": "^9.14.2",
     "nodemon": "^1.18.9",
     "prettier": "1.14.3",
+    "sane": "^4.0.2",
     "standard-version": "^4.4.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2"
