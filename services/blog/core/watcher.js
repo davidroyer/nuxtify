@@ -1,9 +1,9 @@
 const sane = require('sane')
 
-module.exports = {
-    create(dirToWatch, options = {}) {
-        return sane(dirToWatch, options)
-    }
+export default {
+  create(dirToWatch, options = {}) {
+    return sane(dirToWatch, options)
+  }
 }
 
 // watcher.on('ready', function() {

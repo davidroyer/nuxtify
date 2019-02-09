@@ -1,18 +1,22 @@
 ---
-name: article-4s
-title: Article 4 641 test update
+name: 'i-new'
+title: Article 1 930PM
 year: 1 January 2019
-color: '#8e7964'
+color: '#8e7944'
 id: 'vue-nuxt-blog'
 tags:
   - NEWWW
 description: |
-  How I created my new website with portfolio and blog in two languages. What technology I used and why.
+  How I created my new website with portfolio and blog in two languages. What technology I used and why. new
 ---
 
-## Why did I re-do my website with Nuxt? CHECK
+## i am new once again!
 
-I JUST DELETED THE NEW LINE
+test indexss
+
+- fds
+
+## Why did I re-do my website dswith Nuxt?
 
 Although some of you already know me, I am [Marina Aísa](https://twitter.com/MarinaAisa), UX Engineer (design and front-end) and I currently work at [Holaluz](https://www.holaluz.com/en).
 

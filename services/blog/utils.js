@@ -20,17 +20,16 @@ function titleCaseText(text) {
     .join(' ')
 }
 
-
-
 function removeExtension(file) {
   return file.replace(/\.[^/.]+$/, '')
 }
 
 function slugify(textToSlugify) {
-  return textToSlugify.toLowerCase()
+  return textToSlugify
+    .toLowerCase()
     .replace(/[^\w\s-]/g, '') // remove non-word [a-z0-9_], non-whitespace, non-hyphen characters
     .replace(/[\s_-]+/g, '-') // swap any length of whitespace, underscore, hyphen characters with a single -
-    .replace(/^-+|-+$/g, ''); // remove leading, trailing -
+    .replace(/^-+|-+$/g, '') // remove leading, trailing -
 }
 
 exports.slugify = slugify

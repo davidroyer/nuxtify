@@ -1,18 +1,29 @@
 ---
-name: 'article-2b'
-title: Article 1 733HEREEE
-year: 1 January 2019
+title: Overwrite Title 2a
 color: '#8e7944'
 id: 'vue-nuxt-blog'
 tags:
   - NEWWW
+  - article 2 tag
 description: |
   How I created my new website with portfolio and blog in two languages. What technology I used and why. new
 ---
 
+ss
+# testing 
 ## i am new once again! CHECK3
 
 ## Why did I re-do my website dswith Nuxt?
+
+**Code example**
+
+ss
+s
+```js
+head() {
+  return this.$createSeo(this.$route.name)
+}
+```
 
 Although some of you already know me, I am [Marina Aísa](https://twitter.com/MarinaAisa), UX Engineer (design and front-end) and I currently work at [Holaluz](https://www.holaluz.com/en).
 

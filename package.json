@@ -6,9 +6,10 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "dev:blog": "yarn dev:json & yarn dev",
+    "dev:blog": "yarn blog:start & yarn dev",
     "dev:json": "node services/blog",
     "blog:tester": "node --experimental-modules services/blog/tester.js",
+    "blog:start": "node services/blog/start.js",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -17,6 +18,8 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
@@ -28,6 +31,7 @@
     "vuetify-loader": "^1.0.8"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
     "@nuxtjs/eslint-config": "^0.0.1",
     "babel-eslint": "^8.2.1",
     "eslint": "^5.0.1",

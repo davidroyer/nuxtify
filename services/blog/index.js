@@ -2,8 +2,8 @@
 const jetpack = require('fs-jetpack')
 const sane = require('sane')
 const fm = require('front-matter')
-const { titlize } = require('./utils')
-const {md} = require('./md')
+const { titleCaseText } = require('./utils')
+const { md } = require('./core/md')
 
 const CONTENT_DIR = 'contents'
 const BLOG_CONTENT_DIR = 'blog'
@@ -31,7 +31,6 @@ watcher.on('delete', function(filepath, root) {
   createBlogJsonFile(BLOG_CONTENT_PATH)
 })
 
-
 function createBlogJsonFile(BLOG_CONTENT_PATH) {
   const jsonData = []
 
@@ -40,28 +39,27 @@ function createBlogJsonFile(BLOG_CONTENT_PATH) {
       matching: '**/*.md'
     })
     .forEach(function(filepath) {
-        const mdFileName = filepath
+      const mdFileName = filepath
         .replace(`${BLOG_CONTENT_PATH}/`, '')
-        .replace('.md', '');
+        .replace('.md', '')
 
-        const mdFileJson = transformMarkdownData(filepath, mdFileName)
-        jetpack.file(`data/blog/${mdFileName}.json`, { content: mdFileJson })
-        jsonData.push(mdFileJson)
+      const mdFileJson = transformMarkdownData(filepath, mdFileName)
+      jetpack.file(`data/blog/${mdFileName}.json`, { content: mdFileJson })
+      jsonData.push(mdFileJson)
     })
   jetpack.file('data/blog.json', { content: jsonData })
 }
 
-
 function transformMarkdownData(filepath, mdFileName) {
-    const mdFile = jetpack.read(`${filepath}`)
-    const mdFileData = fm(mdFile)
+  const mdFile = jetpack.read(`${filepath}`)
+  const mdFileData = fm(mdFile)
 
-    mdFileData.html = md.render(mdFileData.body);
-    mdFileData.slug = mdFileName
-    mdFileData.titleTest = titlize(mdFileName)
-    delete mdFileData.body
+  mdFileData.html = md.render(mdFileData.body)
+  mdFileData.slug = mdFileName
+  mdFileData.titleTest = titleCaseText(mdFileName)
+  delete mdFileData.body
 
-    return mdFileData
+  return mdFileData
 }
 
 const files = jetpack.list(BLOG_CONTENT_PATH)

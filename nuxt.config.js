@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-import path from 'path';
-import siteMeta from './config/meta';
-import siteConfig from './config/site';
+import path from 'path'
+import siteMeta from './config/meta'
+import siteConfig from './config/site'
 import { generateRoutes } from './services/blog/generate'
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 
