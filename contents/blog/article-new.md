@@ -1,18 +1,17 @@
 ---
-name: 'article-2b'
-title: Article 1 733HEREEE
+name: article-3-newwww
 year: 1 January 2019
-color: '#8e7944'
+color: '#8e7964'
 id: 'vue-nuxt-blog'
 tags:
   - NEWWW
 description: |
-  How I created my new website with portfolio and blog in two languages. What technology I used and why. new
+  How I created my new website with portfolio and blog in two languages. What technology I used and why.
 ---
 
-## i am new once again! CHECK3
+## Why did I re-do my website with Nuxt? CHECK
 
-## Why did I re-do my website dswith Nuxt?
+### NEW LINE
 
 Although some of you already know me, I am [Marina Aísa](https://twitter.com/MarinaAisa), UX Engineer (design and front-end) and I currently work at [Holaluz](https://www.holaluz.com/en).
 

@@ -31,26 +31,6 @@ watcher.on('delete', function(filepath, root) {
   createBlogJsonFile(BLOG_CONTENT_PATH)
 })
 
-// close
-// watcher.close()
-
-function createJsonFileContent(filepath) {
-  console.log('IN NEW FUNCTION')
-
-  const mdFile = jetpack.read(`${BLOG_CONTENT_PATH}/${filepath}`)
-  const mdFileName = filepath
-    .replace(`${BLOG_CONTENT_PATH}/`, '')
-    .replace('.md', '')
-  const mdFileData = fm(mdFile)
-  
-  
-  mdFileData.html = md.render(mdFileData.body);
-  mdFileData.slug = mdFileName
-  mdFileData.titleTest = titlize(mdFileName)
-  delete mdFileData.body
-
-  return mdFileData
-}
 
 function createBlogJsonFile(BLOG_CONTENT_PATH) {
   const jsonData = []
@@ -60,28 +40,28 @@ function createBlogJsonFile(BLOG_CONTENT_PATH) {
       matching: '**/*.md'
     })
     .forEach(function(filepath) {
-        const mdFile = jetpack.read(`${filepath}`)
-        const mdFileData = fm(mdFile)
         const mdFileName = filepath
         .replace(`${BLOG_CONTENT_PATH}/`, '')
         .replace('.md', '');
-        
-    mdFileData.html = md.render(mdFileData.body);
-    mdFileData.slug = mdFileName
-    mdFileData.titleTest = titlize(mdFileName)
-    delete mdFileData.body
-      
-    jetpack.file(`data/blog/${mdFileName}.json`, { content: mdFileData })
-    jsonData.push(mdFileData)
+
+        const mdFileJson = transformMarkdownData(filepath, mdFileName)
+        jetpack.file(`data/blog/${mdFileName}.json`, { content: mdFileJson })
+        jsonData.push(mdFileJson)
     })
   jetpack.file('data/blog.json', { content: jsonData })
 }
 
-// eslint-disable-next-line no-unused-vars
-function updateBlogJsonFile(filepath) {
-  const jsonData = []
-  jsonData.push(createJsonFileContent(filepath))
-  jetpack.file('data/blog.json', { content: jsonData })
+
+function transformMarkdownData(filepath, mdFileName) {
+    const mdFile = jetpack.read(`${filepath}`)
+    const mdFileData = fm(mdFile)
+
+    mdFileData.html = md.render(mdFileData.body);
+    mdFileData.slug = mdFileName
+    mdFileData.titleTest = titlize(mdFileName)
+    delete mdFileData.body
+
+    return mdFileData
 }
 
 const files = jetpack.list(BLOG_CONTENT_PATH)

@@ -11,7 +11,7 @@
 <script>
 export default {
   async asyncData({ params }) {
-    const post = await import(`~/data/blog/${params.slug}.json`)
+    const post = await import(`~/data/blog/${params.slug}`)
     return { post }
   }
 }

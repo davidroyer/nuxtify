@@ -13,4 +13,27 @@ const toTitleCase = function(str) {
   return unhyphenate(str.join(' '))
 }
 
-exports.titlize = toTitleCase
+function titleCaseText(text) {
+  const words = text.split('-')
+  return words
+    .map(word => word.charAt(0).toUpperCase() + word.substring(1).toLowerCase())
+    .join(' ')
+}
+
+
+
+function removeExtension(file) {
+  return file.replace(/\.[^/.]+$/, '')
+}
+
+function slugify(textToSlugify) {
+  return textToSlugify.toLowerCase()
+    .replace(/[^\w\s-]/g, '') // remove non-word [a-z0-9_], non-whitespace, non-hyphen characters
+    .replace(/[\s_-]+/g, '-') // swap any length of whitespace, underscore, hyphen characters with a single -
+    .replace(/^-+|-+$/g, ''); // remove leading, trailing -
+}
+
+exports.slugify = slugify
+exports.titleCaseText = titleCaseText
+exports.toTitleCase = toTitleCase
+exports.removeExtension = removeExtension
