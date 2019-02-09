@@ -21,3 +21,15 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+.v-content
+  padding-bottom: 25px !important;
+  
+  @media (min-width: 960px)
+    padding-bottom: 50px!important;
+  
+  &__wrap
+    padding-top: 1em;
+    
+</style>
