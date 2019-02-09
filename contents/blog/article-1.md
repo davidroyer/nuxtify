@@ -1,9 +1,11 @@
 ---
-title: hi
+title: Custom Title
+tags:
+    - tag 1
+    - tag 2
 ---
 
-# somethingss
-ss
+# somethingssss
 ssss
 > block
 sss

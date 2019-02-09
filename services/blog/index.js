@@ -54,12 +54,24 @@ function transformMarkdownData(filepath, mdFileName) {
   const mdFile = jetpack.read(`${filepath}`)
   const mdFileData = fm(mdFile)
 
-  mdFileData.html = md.render(mdFileData.body)
-  mdFileData.slug = mdFileName
-  mdFileData.titleTest = titleCaseText(mdFileName)
-  delete mdFileData.body
+  // DOESN'T WORK YET
+  // If slug is not set, automatically generate it from the filename by removing the extension
+  const slug = mdFileData.attributes.slug
+    ? mdFileData.attributes.slug
+    : mdFileName
 
-  return mdFileData
+  // If title is not set, automatically generate it from the slug
+  const title = mdFileData.attributes.title
+    ? mdFileData.attributes.title
+    : titleCaseText(slug)
+
+  return {
+    title,
+    slug,
+    html: md.render(mdFileData.body),
+    // markdown: mdFileData.body,
+    ...mdFileData.attributes
+  }
 }
 
 const files = jetpack.list(BLOG_CONTENT_PATH)

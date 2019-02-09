@@ -1,6 +1,10 @@
 <template>
   <div>
-    <nuxt-link v-for="(post, index) in posts" :key="index" :to="`/blog/${post.slug}`" class="title" v-text="post.title" />
+    <v-list>
+      <v-list-tile v-for="(post, index) in posts" :key="index">
+        <nuxt-link :to="`/blog/${post.slug}`" class="title" v-text="post.title" />
+      </v-list-tile>
+    </v-list>
     <v-divider class="my-4" />
     <pre>{{ posts }}</pre>
   </div>

@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "dev:blog": "yarn blog:start & yarn dev",
-    "dev:json": "node services/blog",
+    "dev:blog": "yarn dev:json & yarn dev",
+    "dev:json": "node services/blog/run-index.js",
     "blog:tester": "node --experimental-modules services/blog/tester.js",
     "blog:start": "node services/blog/start.js",
     "build": "nuxt build",
