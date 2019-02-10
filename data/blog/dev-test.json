@@ -1,0 +1,9 @@
+{
+  "title": "Dev Test",
+  "slug": "dev-test",
+  "html": "<p>Testing new file</p>\n<p>s</p>\n",
+  "markdown": "Testing new file\n\ns",
+  "tags": [
+    "test"
+  ]
+}

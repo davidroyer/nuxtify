@@ -1,5 +1,5 @@
 ---
-title: Overwrite Title 2a
+title: Overwrite Title 2as
 color: '#8e7944'
 id: 'vue-nuxt-blog'
 tags:

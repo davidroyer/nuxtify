@@ -1,6 +1,6 @@
-// import navItems from '@/data/nav-items'
+// import navItems from '@/config/nav-items'
 import site from '@/config/site'
-import nav from '@/data/nav'
+import nav from '@/config/nav'
 import { set, toggle } from '@/utils/vuex'
 
 export const state = () => ({
