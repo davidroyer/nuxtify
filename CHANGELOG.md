@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/davidroyer/nuxtify/compare/v0.7.1...v0.8.0) (2019-02-11)
+
+
+### Bug Fixes
+
+* Fixes external links and text ([fdc136c](https://github.com/davidroyer/nuxtify/commit/fdc136c))
+* Fixes meta title for home page ([51e9ad1](https://github.com/davidroyer/nuxtify/commit/51e9ad1))
+
+
+### Features
+
+* Adds contact-form. Fixes padding styles ([c035631](https://github.com/davidroyer/nuxtify/commit/c035631))
+
+
+
 <a name="0.7.1"></a>
 ## [0.7.1](https://github.com/davidroyer/nuxtify/compare/v0.7.0...v0.7.1) (2019-02-08)
 
