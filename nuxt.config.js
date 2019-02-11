@@ -22,7 +22,7 @@ module.exports = {
   generate: {
     fallback: true,
     routes: function() {
-      const blogPosts = require('./data/blog.json')
+      const blogPosts = require('./data/blog/index.json')
       const routes = generateRoutes(blogPosts)
       return routes
     }
