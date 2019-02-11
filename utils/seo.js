@@ -38,3 +38,6 @@ export const createDefaultMeta = (baseUrl, routePath, title) => {
     ]
   }
 }
+
+
+export const uniqueArray = originalArray => [...new Set(originalArray)]

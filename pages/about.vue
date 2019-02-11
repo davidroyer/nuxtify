@@ -10,8 +10,20 @@
 import page from '@/contents/about.md'
 export default {
   head() {
-    return this.$createSeo(this.$route.name)
+    return this.$createSeo('about', [
+      {
+        name: 'og:image',
+        content: require('~/assets/images/classes1.jpg')
+      },
+      {
+        name: 'og:title',
+        content: 'MY CUSTOM OG:TITLE'
+      }
+    ])
   },
+  // head() {
+  //   return this.$createSeo(this.$route.name)
+  // },
   asyncData() {
     return {
       page
