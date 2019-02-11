@@ -1,5 +1,4 @@
 ---
-title: Custom Title2d
 tags:
     - tag 1
     - tag 2

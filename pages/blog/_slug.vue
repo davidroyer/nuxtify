@@ -14,7 +14,7 @@
 export default {
   asyncData({ params }) {
     return {
-      post: require(`@/data/blog/${params.slug}.json`)
+      post: require(`@/data/blog/${params.slug}`)
     }
   }
 }
