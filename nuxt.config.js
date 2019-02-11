@@ -3,7 +3,7 @@ import siteConfig from './config/site'
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 
 module.exports = {
-  watch: ['~/data/*', '~/config/*'],
+  watch: ['~/config/*'],
 
   env: {
     baseUrl:
