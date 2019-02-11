@@ -1,15 +1,12 @@
 <template>
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
-      <!-- <div class="text-xs-center">
-        <h2>Text Center</h2>
-      </div> -->
       <v-card>
         <v-card-title class="headline">
           Welcome to Nuxtify
         </v-card-title>
         <v-card-text>
-<p>Nuxtify is a Nuxt.js Website Boilerplate with Vuetify. It aims to be reusable, reliable, and scalable.</p>
+          <p>Nuxtify is a Nuxt.js Website Boilerplate with Vuetify. It aims to be reusable, reliable, and scalable.</p>
           <p>
             For more information on Nuxtify, check out the <a
               class="font-weight-medium"
@@ -36,17 +33,6 @@
             <em><small>&mdash; David Royer</small></em>
           </div>
         </v-card-text>
-        <!-- <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            flat
-            nuxt
-            to="/contact"
-          >
-            Contact Page
-          </v-btn>
-        </v-card-actions> -->
       </v-card>
     </v-flex>
   </v-layout>
