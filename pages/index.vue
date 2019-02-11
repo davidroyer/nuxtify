@@ -9,14 +9,13 @@
           Welcome to Nuxtify
         </v-card-title>
         <v-card-text>
-          Nuxtify is a Nuxt.js Website Boilerplate with Vuetify is introduced. It aims to be reusable, reliable, and scalable
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
+<p>Nuxtify is a Nuxt.js Website Boilerplate with Vuetify. It aims to be reusable, reliable, and scalable.</p>
           <p>
             For more information on Nuxtify, check out the <a
               class="font-weight-medium"
               href="https://github.com/davidroyer/nuxtify"
               target="_blank"
-              rel="nofollow"
+              rel="noopener"
             >
               github repo
             </a>.
@@ -26,7 +25,7 @@
               class="font-weight-medium"
               href="https://www.davidroyer.me/blog/nuxtify"
               target="_blank"
-              rel="nofollow"
+              rel="noopener"
               title="blog article"
             >
               intro blog article 
