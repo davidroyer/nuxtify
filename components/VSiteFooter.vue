@@ -1,7 +1,6 @@
 <template>
   <v-footer
     dark
-    app
     height="auto"
     class="primary pt-2"
   >
@@ -39,19 +38,13 @@
 </template>
 
 <script>
-import Facebook from '@/assets/svg-icons/facebook.svg'
-
 export default {
   data: () => ({
-    components: { Facebook },
     icons: ['facebook', 'twitter', 'linkedin']
   })
 }
 </script>
 <style scoped>
-.v-footer--fixed {
-  position: relative !important;
-}
 .v-card {
   margin-left: auto;
   margin-right: auto;

@@ -5,9 +5,9 @@ export default {
 
   ogImage: 'share.png',
 
-  shortName: 'Vuxt',
+  shortName: 'Nuxtify',
 
-  title: 'Site Title From @/config',
+  title: 'Site Title',
 
-  url: 'https://vuxt.netlify.com'
+  url: 'https://nuxtify.netlify.com'
 }

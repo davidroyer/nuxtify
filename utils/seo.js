@@ -1,34 +1,40 @@
 /* eslint-disable no-console */
-export const setupRoutesSeoProperties = routesObject => {
+export const setupRoutesMeta = routesObject => {
   for (const route in routesObject) {
-    // console.log('TCL: routesObject', routesObject)
-
-    routesObject[route].seo = {}
-    routesObject[route].seo.title = routesObject[route].label
-    routesObject[route].seo.meta = []
+    routesObject[route].seo = { meta: [] }
+    if (routesObject[route].title !== false)
+      routesObject[route].seo.title = routesObject[route].label
   }
 }
 
-export const handleRouteMetaArray = (
+export const createRouteMeta = (
   originalMetaArray,
   metaArrayForRouteMetaProperty
 ) => {
-  if (metaArrayForRouteMetaProperty) {
+  if (metaArrayForRouteMetaProperty)
     originalMetaArray.push(...metaArrayForRouteMetaProperty)
-  }
 }
 
-export const createDefaultMetaArray = (title, baseUrl, routePath) => {
-  return [
-    {
-      hid: 'og:title',
-      name: 'og:title',
-      property: 'og:title',
-      content: title
-    },
-    {
-      name: 'og:url',
-      content: `${baseUrl}${routePath}`
-    }
-  ]
+export const createDefaultMeta = (baseUrl, routePath, title) => {
+  if (title) {
+    return [
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        property: 'og:title',
+        content: title
+      },
+      {
+        name: 'og:url',
+        content: `${baseUrl}${routePath}`
+      }
+    ]
+  } else {
+    return [
+      {
+        name: 'og:url',
+        content: `${baseUrl}${routePath}`
+      }
+    ]
+  }
 }

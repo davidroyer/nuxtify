@@ -1,31 +1,21 @@
-// import navItems from '@/config/nav-items'
+import navigationRoutes from '@/config/navigation'
 import site from '@/config/site'
-import nav from '@/config/nav'
-import { set, toggle } from '@/utils/vuex'
 
 export const state = () => ({
   drawer: false,
   isDev: null,
-  // navItems,
-  nav,
+  navigationRoutes,
   site
 })
+
 export const mutations = {
   setDev: (state, payload) => (state.isDev = payload),
-
-  toggleDrawer: toggle('drawer'),
-
-  setDrawer: set('drawer')
+  setDrawer: (state, payload) => (state.drawer = payload),
+  toggleDrawer: (state, payload) => (state.drawer = !state.drawer)
 }
 
 export const actions = {
   nuxtServerInit({ commit, state }, { isDev, app }) {
     commit('setDev', isDev)
-
-    // if (isDev) {
-    //     await app.$wp.setupCustomRoutes();
-    //   }
   }
 }
-
-export const getters = {}

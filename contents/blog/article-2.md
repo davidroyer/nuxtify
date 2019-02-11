@@ -1,5 +1,5 @@
 ---
-title: Overwrite Title 2as
+title: Overwrite Title2afs
 color: '#8e7944'
 id: 'vue-nuxt-blog'
 tags:
@@ -13,7 +13,7 @@ ss
 # testing 
 ## i am new once again! CHECK3
 
-## Why did I re-do my website dswith Nuxt?
+## Why did I rdsde-do my website dswith Nuxt?
 
 **Code example**
 

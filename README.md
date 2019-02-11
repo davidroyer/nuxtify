@@ -1,10 +1,10 @@
-# Vuxt
+# Nuxtify
 
 > Nuxt Boilerplate with Vuetify MARKDOWN
 
 ## Demo
 
-:computer: https://vuxt.netlify.com/
+:computer: https://nuxtify.netlify.com/
 
 ## For Version Information
 ## [📖 **Release Notes**](./CHANGELOG.md)

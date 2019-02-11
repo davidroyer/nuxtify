@@ -1,71 +1,38 @@
 <template>
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
-      <div class="text-xs-center">
-        <h2>Text Center</h2>
-      </div>
       <v-card>
         <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
+          Welcome to Nuxtify
         </v-card-title>
         <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
+          <p>Nuxtify is a Nuxt.js Website Boilerplate with Vuetify. It aims to be reusable, reliable, and scalable.</p>
           <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
+            For more information on Nuxtify, check out the <a
+              class="font-weight-medium"
+              href="https://github.com/davidroyer/nuxtify"
               target="_blank"
+              rel="noopener"
             >
-              documentation
+              github repo
             </a>.
           </p>
           <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
+            You can also check out an <a
+              class="font-weight-medium"
+              href="https://www.davidroyer.me/blog/nuxtify"
               target="_blank"
-              title="chat"
+              rel="noopener"
+              title="blog article"
             >
-              discord
+              intro blog article 
             </a>.
           </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
+          <p>Thanks for checking out of my projects and happy coding.</p>
           <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
+            <em><small>&mdash; David Royer</small></em>
           </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-          >
-            Nuxt GitHub
-          </a>
         </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            flat
-            nuxt
-            to="/contact"
-          >
-            Contact Page
-          </v-btn>
-        </v-card-actions>
       </v-card>
     </v-flex>
   </v-layout>

@@ -1,25 +1,12 @@
 <template>
   <v-toolbar-items>
     <v-btn
-      v-for="(item, key) in nav"
+      v-for="(route, key) in $store.state.navigationRoutes"
       :key="key"
       flat
-      :to="item.to"
+      :to="route.to"
     >
-      {{ item.label }}
+      {{ route.label }}
     </v-btn>
   </v-toolbar-items>
 </template>
-
-<script>
-export default {
-  computed: {
-    nav() {
-      return this.$store.state.nav
-    }
-  }
-}
-</script>
-
-<style scoped>
-</style>

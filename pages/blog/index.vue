@@ -11,8 +11,6 @@
 </template>
 
 <script>
-// import posts from '@/data/blog'
-
 export default {
   asyncData() {
     return {

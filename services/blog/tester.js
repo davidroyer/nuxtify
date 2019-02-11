@@ -1,12 +1,14 @@
 /* eslint-disable no-console */
-// import findIndex from 'array.prototype.findindex'
+import mdFileParser from 'front-matter'
+import jetpack from 'fs-jetpack'
 import { md } from './core/md'
 import watcher from './core/watcher'
-
-// require('array.prototype.findindex')
-const mdFileParser = require('front-matter')
-const jetpack = require('fs-jetpack')
-const { removeExtension, titleCaseText } = require('./utils')
+import {
+  createTagsList,
+  getPostsFromTag,
+  removeExtension,
+  titleCaseText
+} from './utils'
 
 const blogContentPath = `contents/blog`
 const blogApiPath = `data`
@@ -26,7 +28,7 @@ const CONFIG = {
 
 setupBeforeInit(CONFIG)
 
-blogContentWatcher.on('ready', function() {
+blogContentWatcher.on('ready', () => {
   initialWrite()
 })
 
@@ -34,7 +36,7 @@ blogContentWatcher.on('ready', function() {
  * Handles content changing of existing files
  */
 blogContentWatcher.on('change', (filepath, root, stat) => {
-  const jsonState = blogApi.read('blog.json', 'json')
+  const jsonState = blogApi.read('blog/index.json', 'json')
   const newPostObject = createDataObject(filepath)
 
   const postObjectIndex = jsonState.findIndex(
@@ -46,7 +48,7 @@ blogContentWatcher.on('change', (filepath, root, stat) => {
     postObjectIndex,
     newPostObject
   )
-  blogApi.write('blog.json', newJsonState)
+  blogApi.write('blog/index.json', newJsonState)
   blogApi.write(`blog/${newPostObject.slug}.json`, newPostObject)
 })
 
@@ -54,56 +56,54 @@ blogContentWatcher.on('change', (filepath, root, stat) => {
  * Handles new files created
  */
 blogContentWatcher.on('add', (filepath, root, stat) => {
-  const jsonState = blogApi.read('blog.json', 'json')
+  const jsonState = blogApi.read('blog/index.json', 'json')
   const newPostObject = createDataObject(filepath)
   const newJsonState = [...jsonState, newPostObject]
 
-  blogApi.file('blog.json', { content: newJsonState })
+  blogApi.write('blog.json', newJsonState)
   blogApi.write(`blog/${newPostObject.slug}.json`, newPostObject)
-
-  /**
-   * This is being handled in the `change` event for now
-   * so it's commented it out
-   */
 })
 
 /**
  * Handles files that are deleted
  */
 blogContentWatcher.on('delete', (filepath, root) => {
-  const jsonState = blogApi.read('blog.json', 'json')
+  const jsonState = blogApi.read('blog/index.json', 'json')
   const slugOfDeletedPost = removeExtension(filepath)
   const postObjectIndex = jsonState.findIndex(
     post => post.slug === slugOfDeletedPost
   )
 
   const newJsonState = removeArrayItemByIndex(jsonState, postObjectIndex)
-
-  blogApi.write('blog.json', newJsonState)
+  blogApi.write('blog/index.json', newJsonState)
   blogApi.remove(`blog/${slugOfDeletedPost}.json`)
-  //  delete
 })
 
 /**
  * Handles setting up the json files initially
  */
 function initialWrite() {
-  console.log('Creating JSON Files from your markdown files...')
-
+  console.log('Creating JSON Files from markdown files...')
   const mdFilesArray = blogContent.find({ matching: ['*.md'] })
 
   // Add the data to the postsArray variable we setup initially
   mdFilesArray.forEach(mdFile => {
     const postDataObject = createDataObject(mdFile)
-    blogApi.write(`blog/${postDataObject.slug}.json`, postDataObject)
     postsArray.push(postDataObject)
+    blogApi.write(`blog/${postDataObject.slug}.json`, postDataObject)
   })
-  blogApi.write('blog.json', postsArray)
-}
 
-// eslint-disable-next-line no-unused-vars
-function createEntryJsonFile(name, content) {
-  blogApi.write(`blog/${name}.json`, content)
+  blogApi.write('blog/index.json', postsArray)
+  console.log('Creation completed.')
+
+  /**
+   * Create tags
+   */
+  const tagsList = createTagsList(postsArray)
+  const tagsArray = tagsList.map(tag => {
+    return getPostsFromTag(postsArray, tag)
+  })
+  blogApi.write(`tags.json`, tagsArray)
 }
 
 function createDataObject(mdFile) {
@@ -119,11 +119,14 @@ function createDataObject(mdFile) {
     ? mdFileData.attributes.title
     : titleCaseText(slug)
 
+  const tags = mdFileData.attributes.tags ? mdFileData.attributes.tags : []
+
   return {
     title,
     slug,
+    tags,
     html: md.render(mdFileData.body),
-    markdown: mdFileData.body,
+    // markdown: mdFileData.body,
     ...mdFileData.attributes
   }
 }
