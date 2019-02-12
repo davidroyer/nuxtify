@@ -23,8 +23,7 @@ module.exports = {
     fallback: true,
     routes: function() {
       const blogPosts = require('./data/blog/index.json')
-      const routes = generateRoutes(blogPosts)
-      return routes
+      return generateRoutes(blogPosts)
     }
   },
 

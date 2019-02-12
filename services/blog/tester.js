@@ -60,7 +60,7 @@ blogContentWatcher.on('add', (filepath, root, stat) => {
   const newPostObject = createDataObject(filepath)
   const newJsonState = [...jsonState, newPostObject]
 
-  blogApi.write('blog.json', newJsonState)
+  blogApi.write('blog/index.json', newJsonState)
   blogApi.write(`blog/${newPostObject.slug}.json`, newPostObject)
 })
 
