@@ -35,11 +35,7 @@ module.exports = {
 
   plugins: ['@/plugins/vuetify', '@/plugins/create-seo'],
 
-  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', 'nuxt-webfontloader'],
-
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
+  modules: ['@nuxtjs/pwa', 'nuxt-webfontloader'],
 
   /**
    * Config for nuxt-webfontloader
