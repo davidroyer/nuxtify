@@ -1,20 +1,26 @@
 <template>
   <div>
     <h1 class="display-3 mb-4">
-      {{ post.title }}
+      {{ postGet.title }}
     </h1>
 
-    <article class="content" v-html="post.html" />
+    <article class="content" v-html="postGet.html" />
     <v-divider class="my-4" />
-    <pre>{{ post }}</pre>
+    <pre>{{ postGet }}</pre>
   </div>
 </template>
 
 <script>
+import { getPost } from '@/services/api'
+// const post = () => import()
+
 export default {
   asyncData({ params, app }) {
+    // const postKey = params.slug
+    // const post = require(`@/data/postsObject`)[params.slug]
     return {
-      post: require(`@/data/blog/${params.slug}`)
+      postGet: getPost(params.slug)
+      // post: require(`@/data/blog/${params.slug}`)
     }
   },
   head() {

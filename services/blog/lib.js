@@ -13,6 +13,7 @@ import {
 const blogContentPath = `contents/blog`
 const blogApiPath = `data`
 const postsArray = []
+const postsObject = {}
 
 const blogContent = jetpack.cwd(blogContentPath)
 const blogApi = jetpack.cwd(blogApiPath)
@@ -36,18 +37,25 @@ blogContentWatcher.on('ready', () => {
  * Handles content changing of existing files
  */
 blogContentWatcher.on('change', (filepath, root, stat) => {
+  const testPostsObjectState = blogApi.read('postsObject/index.json', 'json')
   const jsonState = blogApi.read('blog/index.json', 'json')
+
   const newPostObject = createDataObject(filepath)
 
   const postObjectIndex = jsonState.findIndex(
     post => post.slug === newPostObject.slug
   )
 
+  const postKeyInObject = newPostObject.slug
+
+  testPostsObjectState[postKeyInObject] = newPostObject
+
   const newJsonState = updateArrayState(
     jsonState,
     postObjectIndex,
     newPostObject
   )
+  blogApi.write('postsObject/index.json', testPostsObjectState)
   blogApi.write('blog/index.json', newJsonState)
   blogApi.write(`blog/${newPostObject.slug}.json`, newPostObject)
 })
@@ -90,10 +98,12 @@ function initialWrite() {
   mdFilesArray.forEach(mdFile => {
     const postDataObject = createDataObject(mdFile)
     postsArray.push(postDataObject)
+    postsObject[postDataObject.slug] = postDataObject
     blogApi.write(`blog/${postDataObject.slug}.json`, postDataObject)
   })
 
   blogApi.write('blog/index.json', postsArray)
+  blogApi.write('postsObject/index.json', postsObject)
   console.log('Creation completed.')
 
   /**

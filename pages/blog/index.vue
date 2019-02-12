@@ -1,12 +1,12 @@
 <template>
   <div>
     <v-list>
-      <v-list-tile v-for="(post, index) in posts" :key="index">
+      <v-list-tile v-for="(post, index) in postsObject" :key="index">
         <nuxt-link :to="`/blog/${post.slug}`" class="title" v-text="post.title" />
       </v-list-tile>
     </v-list>
     <v-divider class="my-4" />
-    <pre>{{ posts }}</pre>
+    <pre>{{ postsObject }}</pre>
   </div>
 </template>
 
@@ -14,7 +14,7 @@
 export default {
   asyncData() {
     return {
-      posts: require('@/data/blog')
+      postsObject: require('@/data/postsObject')
     }
   }
 }
