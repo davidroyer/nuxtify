@@ -20,17 +20,25 @@ export default {
       return title ? `${title} - Site Title` : `Site Title`
     },
     meta: siteMeta,
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }
+    ]
   },
 
   /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#222' },
+   ** Customize the progress-bar color
+   */
+  loading: {
+    color: '#222'
+  },
 
   /*
-  ** Global CSS
-  */
+   ** Global CSS
+   */
   css: ['~/assets/style/app.styl'],
 
   plugins: ['@/plugins/vuetify', '@/plugins/create-seo'],
@@ -53,8 +61,8 @@ export default {
   },
 
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     // extractCSS: true,
     transpile: ['vuetify/lib'],
@@ -66,8 +74,8 @@ export default {
     },
 
     /*
-    ** You can extend webpack config here
-    */
+     ** You can extend webpack config here
+     */
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
