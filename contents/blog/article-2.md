@@ -1,5 +1,5 @@
 ---
-title: Overwrite Title 1d
+title: Overwrite Title  scscs
 color: '#8e7944'
 id: 'vue-nuxt-blog'
 tags:
@@ -8,6 +8,8 @@ tags:
 description: |
   How I created my new website with portfolio and blog in two languages. What technology I used and why. new
 ---
+
+:open_file_folder: :pencil2:
 
 ss
 # testing 
