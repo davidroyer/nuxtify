@@ -10,7 +10,7 @@ const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
  */
 
 module.exports = {
-  watch: ['~/config/*'],
+  watch: ['~/config/*', '~/services/**/*.js'],
 
   env: {
     baseUrl:

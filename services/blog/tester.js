@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import mdFileParser from 'front-matter'
 import jetpack from 'fs-jetpack'
-import { md } from './core/md'
+import md from './core/md'
 import watcher from './core/watcher'
 import {
   createTagsList,
