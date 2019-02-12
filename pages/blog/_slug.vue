@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  asyncData({ params }) {
+  asyncData({ params, app }) {
     return {
       post: require(`@/data/blog/${params.slug}`)
     }
