@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-list>
-      <v-list-tile v-for="(post, index) in postsObject" :key="index">
+      <v-list-tile v-for="(post, key) in postsObject" :key="key">
         <nuxt-link :to="`/blog/${post.slug}`" class="title" v-text="post.title" />
       </v-list-tile>
     </v-list>
