@@ -35,7 +35,6 @@ export default new MarkdownIt(mdOptions)
  */
 // highlight(str, lang) {
 //   let hl
-
 //   if (lang && Object.keys(Prism.languages).includes(lang)) {
 //     try {
 //       hl = Prism.highlight(str, Prism.languages[lang])
