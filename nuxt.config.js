@@ -1,8 +1,8 @@
+import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 import siteMeta from './config/meta'
 import siteConfig from './config/site'
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 
-module.exports = {
+export default {
   watch: ['~/config/*'],
 
   env: {
@@ -16,8 +16,8 @@ module.exports = {
     /**
      * If title is not set for page or blank then we don't need the hyphen
      */
-    titleTemplate: titleChunck => {
-      return titleChunck ? `${titleChunck} - Site Title` : `Site Title`
+    titleTemplate: title => {
+      return title ? `${title} - Site Title` : `Site Title`
     },
     meta: siteMeta,
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -26,7 +26,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#222' },
 
   /*
   ** Global CSS
@@ -36,6 +36,11 @@ module.exports = {
   plugins: ['@/plugins/vuetify', '@/plugins/create-seo'],
 
   modules: ['@nuxtjs/pwa', 'nuxt-webfontloader'],
+
+  // '@nuxtjs/google-analytics'
+  // 'google-analytics': {
+  //   id: '123-your-id'
+  // },
 
   /**
    * Config for nuxt-webfontloader
@@ -47,16 +52,12 @@ module.exports = {
     }
   },
 
-  /**
-   * Analytics ID will be set here so it's not exposed in store
-   */
-
   /*
   ** Build configuration
   */
   build: {
+    // extractCSS: true,
     transpile: ['vuetify/lib'],
-    extractCSS: true,
     plugins: [new VuetifyLoaderPlugin()],
     loaders: {
       stylus: {

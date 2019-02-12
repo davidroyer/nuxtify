@@ -3,16 +3,16 @@
 .v-navigation-drawer .v-list__tile--link > .v-list__tile__title
     font-size: 1.1rem;
 
-.page
-  @extend .fade-transition
+// .page
+  // @extend .fade-transition
 
-  // .page-enter-active,
-  // .page-leave-active {
-  //   transition: all 0.45s ease-in-out;
-  //   transition: all 0.45s cubic-bezier(0.55, 0, 0.1, 1);
-  // }
-  // .page-enter,
-  // .page-leave-active {
-  //   opacity: 0;
-  //   transform: translate(10px, 0);
-  // }
+  .page-enter-active,
+  .page-leave-active {
+    transition: all 0.45s ease-in-out;
+    transition: all 0.45s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+  .page-enter,
+  .page-leave-active {
+    opacity: 0;
+    transform: translate(10px, 0);
+  }
