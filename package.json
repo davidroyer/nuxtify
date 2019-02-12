@@ -9,6 +9,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "serve": "yarn http-server dist",
     "release": "standard-version && git push --follow-tags origin master",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
@@ -36,6 +37,7 @@
     "eslint-plugin-promise": ">=4.0.1",
     "eslint-plugin-standard": ">=4.0.0",
     "eslint-plugin-vue": "^5.0.0",
+    "http-server": "^0.11.1",
     "nodemon": "^1.18.9",
     "prettier": "1.14.3",
     "standard-version": "^4.4.0",

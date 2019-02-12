@@ -60,6 +60,7 @@ module.exports = {
   */
   build: {
     transpile: ['vuetify/lib'],
+    extractCSS: true,
     plugins: [new VuetifyLoaderPlugin()],
     loaders: {
       stylus: {
