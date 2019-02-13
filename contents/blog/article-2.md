@@ -1,5 +1,5 @@
 ---
-title: Overwritdse Title ab 1
+title: New Title
 color: '#8e7944'
 id: 'vue-nuxt-blog'
 tags:
@@ -13,7 +13,7 @@ description: |
 
 :open_file_folder: :pencil2:
 
-ss
+ssss
 # testing 12a
 ## i am new once again! CHECK3
 

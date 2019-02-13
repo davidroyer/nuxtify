@@ -11,7 +11,7 @@ import {
 } from './utils'
 
 const blogContentPath = `contents/blog`
-const blogApiPath = `data`
+const blogApiPath = `json`
 const postsArray = []
 const postsObject = {}
 
@@ -114,7 +114,16 @@ function initialWrite() {
     return getPostsFromTag(postsArray, tag)
   })
   blogApi.write(`tags.json`, tagsArray)
+
+  // const tagsObjectList = createTagsFile(postsObject)
 }
+
+// function createTagsFile(postsObject) {
+//   const tagsObject = {}
+//   for (const post in postsObject) {
+//     routesArray.push(posts[post])
+//   }
+// }
 
 function createDataObject(mdFile) {
   const mdFileData = mdFileParser(blogContent.read(mdFile))

@@ -1,20 +1,23 @@
 <template>
   <div>
     <v-list>
-      <v-list-tile v-for="(post, key) in postsObject" :key="key">
+      <v-list-tile v-for="(post, key) in posts" :key="key">
         <nuxt-link :to="`/blog/${post.slug}`" class="title" v-text="post.title" />
       </v-list-tile>
     </v-list>
     <v-divider class="my-4" />
-    <pre>{{ postsObject }}</pre>
+    <pre>{{ posts }}</pre>
   </div>
 </template>
 
 <script>
+// import { getPosts } from '@/services/api'
+
 export default {
-  asyncData() {
+  asyncData({ $api }) {
     return {
-      postsObject: require('@/data/postsObject')
+      // posts: $api.getPosts()
+      posts: require('@/json/postsObject')
     }
   }
 }

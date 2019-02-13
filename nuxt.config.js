@@ -17,7 +17,7 @@ export default {
   generate: {
     fallback: true,
     routes: function() {
-      const blogPosts = require('./data/postsObject/index.json')
+      const blogPosts = require('./json/postsObject/index.json')
       return generateRoutes(blogPosts)
     }
   },
@@ -54,7 +54,7 @@ export default {
    */
   css: ['~/assets/style/app.styl'],
 
-  plugins: ['@/plugins/vuetify', '@/plugins/create-seo'],
+  plugins: ['@/plugins/vuetify', '@/plugins/create-seo', '@/plugins/api'],
 
   modules: ['@nuxtjs/pwa', 'nuxt-webfontloader'],
 
@@ -90,8 +90,7 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
-      // const rule = config.module.rules.find(r => r.test.toString() === '/\\.(png|jpe?g|gif|svg|webp)$/');
-      // config.module.rules.splice(config.module.rules.indexOf(rule), 1);
+      // config.resolve.alias['@json'] = path.join(__dirname, 'data/')
 
       config.module.rules.push({
         test: /\.md$/,
