@@ -1,9 +1,6 @@
 <template>
   <div>
-    <h1 class="display-3 mb-4">
-      {{ post.title }}
-    </h1>
-
+    <h1 class="display-3 mb-4" v-text="post.title" />
     <article class="content" v-html="post.html" />
     <v-divider class="my-4" />
     <pre>{{ post }}</pre>
@@ -23,7 +20,7 @@ export default {
 
   computed: {
     post() {
-      return this.$api.getPost(this.$routeparams.slug)
+      return this.$api.getPost(this.$route.params.slug)
     }
   },
   head() {
