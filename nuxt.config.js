@@ -1,15 +1,10 @@
-/* eslint-disable no-console */
 import path from 'path'
+import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 import siteMeta from './config/meta'
 import siteConfig from './config/site'
 import { generateRoutes } from './services/blog/generate'
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 
-/**
- * Analytics ID will be set here so it's not exposed in store
- */
-
-module.exports = {
+export default {
   watch: ['~/config/*'],
 
   env: {
@@ -21,8 +16,8 @@ module.exports = {
 
   generate: {
     fallback: true,
-    routes: () => {
-      const blogPosts = require('./data/blog')
+    routes: function() {
+      const blogPosts = require('./json/postsObject/index.json')
       return generateRoutes(blogPosts)
     }
   },
@@ -34,30 +29,39 @@ module.exports = {
     /**
      * If title is not set for page or blank then we don't need the hyphen
      */
-    titleTemplate: titleChunck => {
-      return titleChunck ? `${titleChunck} - Site Title` : `Site Title`
+    titleTemplate: title => {
+      return title ? `${title} - Site Title` : `Site Title`
     },
     meta: siteMeta,
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }
+    ]
   },
 
   /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
+   ** Customize the progress-bar color
+   */
+  loading: {
+    color: '#222'
+  },
 
   /*
-  ** Global CSS
-  */
+   ** Global CSS
+   */
   css: ['~/assets/style/app.styl'],
 
-  plugins: ['@/plugins/vuetify', '@/plugins/create-seo'],
+  plugins: ['@/plugins/vuetify', '@/plugins/create-seo', '@/plugins/api'],
 
-  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', 'nuxt-webfontloader'],
+  modules: ['@nuxtjs/pwa', 'nuxt-webfontloader'],
 
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
+  // '@nuxtjs/google-analytics'
+  // 'google-analytics': {
+  //   id: '123-your-id'
+  // },
 
   /**
    * Config for nuxt-webfontloader
@@ -69,17 +73,11 @@ module.exports = {
     }
   },
 
-  /**
-   * Analytics ID will be set here so it's not exposed in store
-   */
-
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
-    // analyze: {
-    //   analyzerMode: 'static'
-    // },
+    // extractCSS: true,
     transpile: ['vuetify/lib'],
     plugins: [new VuetifyLoaderPlugin()],
     loaders: {
@@ -89,12 +87,10 @@ module.exports = {
     },
 
     /*
-    ** You can extend webpack config here
-    */
-
+     ** You can extend webpack config here
+     */
     extend(config, ctx) {
-      // const rule = config.module.rules.find(r => r.test.toString() === '/\\.(png|jpe?g|gif|svg|webp)$/');
-      // config.module.rules.splice(config.module.rules.indexOf(rule), 1);
+      // config.resolve.alias['@json'] = path.join(__dirname, 'data/')
 
       config.module.rules.push({
         test: /\.md$/,

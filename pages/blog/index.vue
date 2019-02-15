@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-list>
-      <v-list-tile v-for="(post, index) in posts" :key="index">
+      <v-list-tile v-for="(post, key) in posts" :key="key">
         <nuxt-link :to="`/blog/${post.slug}`" class="title" v-text="post.title" />
       </v-list-tile>
     </v-list>
@@ -11,10 +11,13 @@
 </template>
 
 <script>
+// import { getPosts } from '@/services/api'
+
 export default {
-  asyncData() {
+  asyncData({ $api }) {
     return {
-      posts: require('@/data/blog')
+      // posts: $api.getPosts()
+      posts: require('@/json/postsObject')
     }
   }
 }

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import mdFileParser from 'front-matter'
 import jetpack from 'fs-jetpack'
-import { md } from './core/md'
+import md from './core/md'
 import watcher from './core/watcher'
 import {
   createTagsList,
@@ -11,8 +11,9 @@ import {
 } from './utils'
 
 const blogContentPath = `contents/blog`
-const blogApiPath = `data`
+const blogApiPath = `json`
 const postsArray = []
+const postsObject = {}
 
 const blogContent = jetpack.cwd(blogContentPath)
 const blogApi = jetpack.cwd(blogApiPath)
@@ -36,18 +37,25 @@ blogContentWatcher.on('ready', () => {
  * Handles content changing of existing files
  */
 blogContentWatcher.on('change', (filepath, root, stat) => {
+  const testPostsObjectState = blogApi.read('postsObject/index.json', 'json')
   const jsonState = blogApi.read('blog/index.json', 'json')
+
   const newPostObject = createDataObject(filepath)
 
   const postObjectIndex = jsonState.findIndex(
     post => post.slug === newPostObject.slug
   )
 
+  const postKeyInObject = newPostObject.slug
+
+  testPostsObjectState[postKeyInObject] = newPostObject
+
   const newJsonState = updateArrayState(
     jsonState,
     postObjectIndex,
     newPostObject
   )
+  blogApi.write('postsObject/index.json', testPostsObjectState)
   blogApi.write('blog/index.json', newJsonState)
   blogApi.write(`blog/${newPostObject.slug}.json`, newPostObject)
 })
@@ -60,7 +68,7 @@ blogContentWatcher.on('add', (filepath, root, stat) => {
   const newPostObject = createDataObject(filepath)
   const newJsonState = [...jsonState, newPostObject]
 
-  blogApi.write('blog.json', newJsonState)
+  blogApi.write('blog/index.json', newJsonState)
   blogApi.write(`blog/${newPostObject.slug}.json`, newPostObject)
 })
 
@@ -90,10 +98,12 @@ function initialWrite() {
   mdFilesArray.forEach(mdFile => {
     const postDataObject = createDataObject(mdFile)
     postsArray.push(postDataObject)
+    postsObject[postDataObject.slug] = postDataObject
     blogApi.write(`blog/${postDataObject.slug}.json`, postDataObject)
   })
 
   blogApi.write('blog/index.json', postsArray)
+  blogApi.write('postsObject/index.json', postsObject)
   console.log('Creation completed.')
 
   /**
@@ -104,7 +114,16 @@ function initialWrite() {
     return getPostsFromTag(postsArray, tag)
   })
   blogApi.write(`tags.json`, tagsArray)
+
+  // const tagsObjectList = createTagsFile(postsObject)
 }
+
+// function createTagsFile(postsObject) {
+//   const tagsObject = {}
+//   for (const post in postsObject) {
+//     routesArray.push(posts[post])
+//   }
+// }
 
 function createDataObject(mdFile) {
   const mdFileData = mdFileParser(blogContent.read(mdFile))
@@ -126,7 +145,6 @@ function createDataObject(mdFile) {
     slug,
     tags,
     html: md.render(mdFileData.body),
-    // markdown: mdFileData.body,
     ...mdFileData.attributes
   }
 }
