@@ -23,7 +23,7 @@ export default {
 
   computed: {
     post() {
-      return this.$api.getPost(this.$route.params.slug)
+      return this.$api.getPost(this.$routeparams.slug)
     }
   },
   head() {
