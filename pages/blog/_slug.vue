@@ -16,7 +16,7 @@ export default {
   },
   head() {
     return {
-      title: this.post.title,
+      title: 'Blog Post Title',
       link: [
         {
           rel: 'stylesheet',
