@@ -8,7 +8,6 @@
       </div>      
       <v-contact-form />
     </v-flex>
-    </v-contact-form>
   </v-layout>
 </template>
 

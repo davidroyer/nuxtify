@@ -8,23 +8,15 @@
 </template>
 
 <script>
-// import { getItem, getPost } from '@/services/api'
 export default {
-  // asyncData({ params }) {
-  //   return {
-  //     // post: getPost(params.slug)
-  //     // post: getItem('postsObject', params.slug)
-  //     // post: require(`@/json/postsObject`)[params.slug]
-  //   }
-  // },
-
   computed: {
     post() {
-      return this.$api.getPost(this.$route.params.slug)
+      return this.$getPost(this.$slug)
     }
   },
   head() {
     return {
+      title: this.post.title,
       link: [
         {
           rel: 'stylesheet',

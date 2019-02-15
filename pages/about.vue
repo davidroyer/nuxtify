@@ -9,6 +9,11 @@
 <script>
 import page from '@/contents/about.md'
 export default {
+  computed: {
+    slugTest() {
+      return this.$slug
+    }
+  },
   head() {
     return this.$createSeo('about', [
       {
