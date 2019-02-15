@@ -1,6 +1,6 @@
 {
-  "title": "NEW cssz",
+  "title": "NEW 3f",
   "slug": "article-3",
   "tags": [],
-  "html": "<p>ssss</p>\n"
+  "html": "<h2>I am a heading</h2>\n<ul>\n<li>item1</li>\n<li>item2</li>\n<li>item3</li>\n</ul>\n<blockquote>\n<p>Something nice</p>\n</blockquote>\n<ul>\n<li>Do this</li>\n<li>Then that</li>\n<li>Then be the best</li>\n</ul>\n"
 }

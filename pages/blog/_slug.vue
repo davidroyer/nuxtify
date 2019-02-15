@@ -11,10 +11,19 @@
 </template>
 
 <script>
+// import { getItem, getPost } from '@/services/api'
 export default {
-  asyncData({ params }) {
-    return {
-      post: require(`@/json/postsObject`)[params.slug]
+  // asyncData({ params }) {
+  //   return {
+  //     // post: getPost(params.slug)
+  //     // post: getItem('postsObject', params.slug)
+  //     // post: require(`@/json/postsObject`)[params.slug]
+  //   }
+  // },
+
+  computed: {
+    post() {
+      return this.$api.getPost(this.$route.params.slug)
     }
   },
   head() {
