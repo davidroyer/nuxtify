@@ -11,8 +11,7 @@
 export default {
   computed: {
     post() {
-      return this.$getPost(this.$route.params.slug)
-      // return this.$getPost(this.$slug)
+      return this.$getPost()
     }
   },
   head() {

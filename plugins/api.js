@@ -9,6 +9,11 @@ export default (context, inject) => {
 
 Vue.prototype.$api = api
 
-Vue.prototype.$getPost = function(slug) {
+Vue.prototype.$getPost = function() {
+  const slug = this.$route.params.slug
   return require(`@/json/postsObject`)[slug]
+}
+
+Vue.prototype.$getPosts = function() {
+  return require(`@/json/postsObject`)
 }

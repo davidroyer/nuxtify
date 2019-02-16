@@ -11,13 +11,10 @@
 </template>
 
 <script>
-// import { getPosts } from '@/services/api'
-
 export default {
-  asyncData({ $api }) {
-    return {
-      // posts: $api.getPosts()
-      posts: require('@/json/postsObject')
+  computed: {
+    posts() {
+      return this.$getPosts()
     }
   }
 }
