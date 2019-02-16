@@ -10,7 +10,7 @@ import {
   titleCaseText
 } from './utils'
 
-const blogContentPath = `contents/blog`
+const blogContentPath = `_content/blog`
 const blogApiPath = `json`
 const postsArray = []
 const postsObject = {}
@@ -57,7 +57,7 @@ blogContentWatcher.on('change', (filepath, root, stat) => {
   )
   blogApi.write('posts/index.json', testPostsObjectState)
   blogApi.write('blog/index.json', newJsonState)
-  blogApi.write(`blog/${newPostObject.slug}.json`, newPostObject)
+  // blogApi.write(`blog/${newPostObject.slug}.json`, newPostObject)
 })
 
 /**
@@ -69,7 +69,8 @@ blogContentWatcher.on('add', (filepath, root, stat) => {
   const newJsonState = [...jsonState, newPostObject]
 
   blogApi.write('blog/index.json', newJsonState)
-  blogApi.write(`blog/${newPostObject.slug}.json`, newPostObject)
+  blogApi.write('posts/index.json', newJsonState)
+  // blogApi.write(`blog/${newPostObject.slug}.json`, newPostObject)
 })
 
 /**
@@ -84,7 +85,7 @@ blogContentWatcher.on('delete', (filepath, root) => {
 
   const newJsonState = removeArrayItemByIndex(jsonState, postObjectIndex)
   blogApi.write('blog/index.json', newJsonState)
-  blogApi.remove(`blog/${slugOfDeletedPost}.json`)
+  // blogApi.remove(`blog/${slugOfDeletedPost}.json`)
 })
 
 /**
@@ -99,7 +100,7 @@ function initialWrite() {
     const postDataObject = createDataObject(mdFile)
     postsArray.push(postDataObject)
     postsObject[postDataObject.slug] = postDataObject
-    blogApi.write(`blog/${postDataObject.slug}.json`, postDataObject)
+    // blogApi.write(`blog/${postDataObject.slug}.json`, postDataObject)
   })
 
   blogApi.write('blog/index.json', postsArray)

@@ -1,5 +1,5 @@
-[
-  {
+{
+  "article-1": {
     "title": "ARTICLE 12",
     "slug": "article-1",
     "tags": [
@@ -9,7 +9,7 @@
     ],
     "html": "<h3>heading 4as</h3>\n<p><a href=\"https://example.com\" target=\"_blank\" rel=\"noopener\">Matching Example2</a></p>\n<p><a href=\"https://example.com\" target=\"_blank\" rel=\"noopener\">Matching Example</a></p>\n<p>USING AN OBJECT</p>\n<h1>something contianer</h1>\n<div class=\"tip\">\n<p>This is a tip</p>\n</div>\n<p>hiiii</p>\n<div class=\"warning\">\n<p>This is a warning</p>\n</div>\n<p>ssss</p>\n<blockquote>\n<p>block<br>\nsss<br>\nnew s<br>\nss<br>\nShoe me something!!</p>\n</blockquote>\n<ul>\n<li>item1ss</li>\n<li>item2</li>\n<li>item3</li>\n</ul>\n<h2>heading level 2</h2>\n<h3>heading 3</h3>\n<ol>\n<li>do this</li>\n<li>then that</li>\n</ol>\n"
   },
-  {
+  "article-2": {
     "title": "New Title",
     "slug": "article-2",
     "tags": [
@@ -21,13 +21,13 @@
     "id": "vue-nuxt-blog",
     "description": "How I created my new website with portfolio and blog in two languages. What technology I used and why. new\n"
   },
-  {
+  "article-3": {
     "title": "NEW 3a",
     "slug": "article-3",
     "tags": [],
     "html": "<h2>I am a heading</h2>\n<h2>I am a heading too!</h2>\n<p>sds</p>\n<ul>\n<li>item1</li>\n<li>item2</li>\n<li>item3</li>\n</ul>\n<blockquote>\n<p>Something nice</p>\n</blockquote>\n<ul>\n<li>Do this</li>\n<li>Then that</li>\n<li>Then be the best</li>\n</ul>\n"
   },
-  {
+  "dev-test": {
     "title": "Dev Test",
     "slug": "dev-test",
     "tags": [
@@ -35,7 +35,7 @@
     ],
     "html": "<p>Testing ssnew file2</p>\n<p>adsasdsddsdsa</p>\n<p>sss</p>\n"
   },
-  {
+  "test": {
     "title": "My Quest For the Ultimate Nuxt.js Wesbite Template 12H",
     "slug": "test",
     "tags": [
@@ -45,10 +45,10 @@
     "html": "<p>NEW TEST JSON2</p>\n<p>Input</p>\n<div class=\"tip\">\n<p>This is a tip</p>\n</div>\n<p>I’ve spent the past several months working with Nuxt and trying to compose an awesome starter template to use.</p>\n<p>I have had the following goals for it:</p>\n<ol>\n<li>Reusable</li>\n<li>Reliable</li>\n<li>Scalable</li>\n</ol>\n<p>While I was originally using TailwindCSS with PurgeCSS (which is an amazing combination) without a framework to keep my sites performant with smaller build sizes.I recently switched to using Vuetify instead.</p>\n<p>This change came in result of the newer ability to only include a site’s used components when building for production via tree shaking using VuetifyLoader.</p>\n<p>With that being said, I would like to introduce my new project which I call <strong>Nuxtify</strong> which aims to provide a starter template for best-practices, easy setup, and fantastic performance (<a href=\"\" target=\"_blank\" rel=\"noopener\"><em>See Performance Score Below</em></a>).</p>\n<p>I hope to produce a few articles over the next several weeks covering my results, tips, and anything that could help fellow developers.</p>\n<p>For now, I want to share <a href=\"https://github.com/davidroyer/nuxtify\" target=\"_blank\" rel=\"noopener\">the repo</a>, <a href=\"https://nuxtify.netlify.com/\" target=\"_blank\" rel=\"noopener\">the demo site</a>, and a few notable tidbits.</p>\n<h2>Notable Tidbits</h2>\n<p>Here a few things you might be helpful or interesting, especially if you work with Nuxt.</p>\n<h3>Configs</h3>\n<p>I have a <code>configs</code> directory and then inside of <code>nuxt.config.js</code> I have added them to the <code>watch</code> option. This enhances the development experience by automatically restarting the server when there is a change in these files.</p>\n<pre class=\"language-js\"><code class=\"language-js\">watch<span class=\"token punctuation\">:</span> <span class=\"token punctuation\">[</span><span class=\"token string\">'~/config/*'</span><span class=\"token punctuation\">]</span>\n</code></pre>\n<h3>Layout Structure</h3>\n<p>Sections of site <code>layout.vue</code> file are separated into components creating a more organized and structured code base as show below:</p>\n<pre class=\"language-html\"><code class=\"language-html\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>v-app</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>v-site-header</span> <span class=\"token punctuation\">/></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>v-site-content</span> <span class=\"token punctuation\">/></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>v-mobile-nav</span> <span class=\"token punctuation\">/></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>v-site-footer</span> <span class=\"token punctuation\">/></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>v-app</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>\n\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>script</span><span class=\"token punctuation\">></span></span><span class=\"token script language-javascript\">\n<span class=\"token keyword\">import</span> VMobileNav <span class=\"token keyword\">from</span> <span class=\"token string\">'@/components/VMobileNav.vue'</span>\n<span class=\"token keyword\">import</span> VSiteContent <span class=\"token keyword\">from</span> <span class=\"token string\">'@/components/VSiteContent.vue'</span>\n<span class=\"token keyword\">import</span> VSiteHeader <span class=\"token keyword\">from</span> <span class=\"token string\">'@/components/VSiteHeader.vue'</span>\n\n<span class=\"token keyword\">export</span> <span class=\"token keyword\">default</span> <span class=\"token punctuation\">{</span>\n  components<span class=\"token punctuation\">:</span> <span class=\"token punctuation\">{</span>\n    VMobileNav<span class=\"token punctuation\">,</span>\n    VSiteContent<span class=\"token punctuation\">,</span>\n    VSiteHeader<span class=\"token punctuation\">,</span>\n    VSiteFooter<span class=\"token punctuation\">:</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token keyword\">import</span><span class=\"token punctuation\">(</span><span class=\"token string\">'@/components/VSiteFooter.vue'</span><span class=\"token punctuation\">)</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>\n</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>script</span><span class=\"token punctuation\">></span></span>\n</code></pre>\n<p>If you are wondering, “Where is the <code>&lt;nuxt /&gt;</code> component?”, it’s actually possible to place it inside a component file which I have done here by relocating it to the <code>v-site-content</code> component as seen below:</p>\n<pre class=\"language-html\"><code class=\"language-html\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>v-content</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>v-container</span><span class=\"token punctuation\">></span></span>\n      <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>nuxt</span> <span class=\"token punctuation\">/></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>v-container</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>v-content</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>\n</code></pre>\n<h3>Performance</h3>\n<p>Nuxtify is currently achieving a Lighthouse score of 98-100. I personally believe it’s quite incredible to be able to harness a framework as versatile and powerful as Vuetify and produce such high-performing sites.</p>\n<p><img src=\"/blog-images/nuxtify-lighthouse.png\" alt=\"nuxtify-lighthouse\"></p>\n",
     "description": "Nuxtify, a Nuxt.js Website Boilerplate with Vuetify is introduced. It aims to be reusable, reliable, and scalable"
   },
-  {
+  "test2": {
     "title": "Custom 3bssaass",
     "slug": "test2",
     "tags": [],
     "html": "<p>hi<br>\nnewww</p>\n<p>dsad</p>\n"
   }
-]
+}

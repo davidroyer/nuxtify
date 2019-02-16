@@ -11,10 +11,14 @@ description: |
 
 :smile:
 
+
+
 :open_file_folder: :pencil2:
 
-ssss
-# testing 12a
+* hi
+* hi2
+
+# testing 12b
 ## i am new once again! CHECK3
 
 ## Why did I rdsde-do my website dswith Nuxt?

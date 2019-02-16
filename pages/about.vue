@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import page from '@/contents/about.md'
+import page from '@/_content/about.md'
 export default {
   computed: {
     slugTest() {

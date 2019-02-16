@@ -14,7 +14,7 @@
 export default {
   asyncData({ app, params }) {
     return {
-      post: app.$getPosts()
+      posts: app.$get('posts')
     }
   }
   // computed: {

@@ -2,8 +2,8 @@
   <div>
     <h1 class="display-3 mb-4" v-text="post.title" />
     <article class="content" v-html="post.html" />
-    <v-divider class="my-4" />
-    <pre>{{ post }}</pre>
+    <!-- <v-divider class="my-4" />
+    <pre>{{ post }}</pre> -->
   </div>
 </template>
 
@@ -11,14 +11,10 @@
 export default {
   asyncData({ app, params }) {
     return {
-      post: app.$getPost(params.slug)
+      // post: app.$getPost(params.slug),
+      post: app.$get('posts', params.slug)
     }
   },
-  // computed: {
-  //   post() {
-  //     return this.$getPost(this.$slug)
-  //   }
-  // },
   head() {
     return {
       title: this.post.title,
@@ -95,4 +91,11 @@ pre[class*='language-'] {
 .content pre[class*='language-'] {
   font-size: 1.15em;
 }
+</style>
+
+<style lang="stylus">
+article
+  code, kbd
+    font-weight: 400;
+    font-size: .825em !important;
 </style>

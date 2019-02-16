@@ -1,5 +1,5 @@
 ---
-title: ARTICLE 12c
+title: ARTICLE 12
 tags:
     - tag 1
     - tag 2
@@ -7,7 +7,7 @@ tags:
 ---
 
 
-### heading 4c
+### heading 4as
 
 [Matching Example2](https://example.com)
 

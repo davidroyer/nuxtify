@@ -8,8 +8,6 @@ export default (context, inject) => {
   if (context.params.slug) {
     slug = context.params.slug
     article = require(`@/json/posts`)[slug]
-
-    article.test = 'Test Here'
   } else {
     slug = null
     article = null
@@ -27,9 +25,10 @@ export default (context, inject) => {
     return require(`@/json/posts`)
   })
 
-  // Vue.prototype.$slug = context.route.params.slug
-  //   ? context.route.params.slug
-  //   : null
+  inject('get', (collection, slug) => {
+    if (slug) return require(`@/json/${collection}`)[slug]
+    else return require(`@/json/${collection}`)
+  })
 }
 
 // Vue.prototype.$api = api
