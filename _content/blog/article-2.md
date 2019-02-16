@@ -55,7 +55,7 @@ Nuxt, by following the architecture [JAMStack](https://jamstack.org/) is built t
 
 Using the asynchronous function <inline-code>asyncData</inline-code> that Nuxt provides only in its pages (it is not avalaible in its components) I import the Markdowns that I have saved in the folder <inline-code>content</inline-code> of the project. Later I return them in the form of a promise as an array of objects. As you can see below, this import depends on the constant <inline-code>blogs</inline-code> which will be the array <inline-code>blogsEs</inline-code> or <inline-code>blogsEn</inline-code> depending on the language of the page stored on the Vuex's state.
 
-```javascript
+```js
 import blogsEn from '~/contents/en/blogsEn.js'
 import blogsEs from '~/contents/es/blogsEs.js'
 
@@ -78,7 +78,7 @@ async asyncData ({store}) {
 
 The reason why I'm importing the arrays containing the blogs names is because I want to use it also to generate the static pages through the object [generate](https://nuxtjs.org/api/configuration-generate/) in the Nuxt configuration, file <inline-code>nuxt.config.js</inline-code>.
 
-```javascript
+```js
 import blogsEn from '~/contents/en/blogsEn.js'
 import blogsEs from '~/contents/es/blogsEs.js'
 
