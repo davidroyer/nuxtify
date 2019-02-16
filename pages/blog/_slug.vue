@@ -11,12 +11,13 @@
 export default {
   computed: {
     post() {
-      return this.$getPost(this.$slug)
+      return this.$getPost(this.$route.params.slug)
+      // return this.$getPost(this.$slug)
     }
   },
   head() {
     return {
-      title: 'Blog Post Title',
+      title: this.post.title,
       link: [
         {
           rel: 'stylesheet',
