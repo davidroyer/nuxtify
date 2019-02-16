@@ -12,11 +12,16 @@
 
 <script>
 export default {
-  computed: {
-    posts() {
-      return this.$getPosts()
+  asyncData({ app, params }) {
+    return {
+      post: app.$getPosts()
     }
   }
+  // computed: {
+  //   posts() {
+  //     return this.$getPosts()
+  //   }
+  // }
 }
 </script>
 

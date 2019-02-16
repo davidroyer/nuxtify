@@ -9,11 +9,16 @@
 
 <script>
 export default {
-  computed: {
-    post() {
-      return this.$getPost()
+  asyncData({ app, params }) {
+    return {
+      post: app.$getPost(params.slug)
     }
   },
+  // computed: {
+  //   post() {
+  //     return this.$getPost(this.$slug)
+  //   }
+  // },
   head() {
     return {
       title: this.post.title,

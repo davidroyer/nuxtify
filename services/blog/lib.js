@@ -37,7 +37,7 @@ blogContentWatcher.on('ready', () => {
  * Handles content changing of existing files
  */
 blogContentWatcher.on('change', (filepath, root, stat) => {
-  const testPostsObjectState = blogApi.read('postsObject/index.json', 'json')
+  const testPostsObjectState = blogApi.read('posts/index.json', 'json')
   const jsonState = blogApi.read('blog/index.json', 'json')
 
   const newPostObject = createDataObject(filepath)
@@ -55,7 +55,7 @@ blogContentWatcher.on('change', (filepath, root, stat) => {
     postObjectIndex,
     newPostObject
   )
-  blogApi.write('postsObject/index.json', testPostsObjectState)
+  blogApi.write('posts/index.json', testPostsObjectState)
   blogApi.write('blog/index.json', newJsonState)
   blogApi.write(`blog/${newPostObject.slug}.json`, newPostObject)
 })
@@ -103,7 +103,7 @@ function initialWrite() {
   })
 
   blogApi.write('blog/index.json', postsArray)
-  blogApi.write('postsObject/index.json', postsObject)
+  blogApi.write('posts/index.json', postsObject)
   console.log('Creation completed.')
 
   /**

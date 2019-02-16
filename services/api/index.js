@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 // export default () => {}
 
-export const getPost = slug => require(`@/json/postsObject`)[slug]
-export const getPosts = () => require(`@/json/postsObject`)
+export const getPost = slug => require(`@/json/posts`)[slug]
+export const getPosts = () => require(`@/json/posts`)
 
 export const getItem = (collection, slug) => {
   console.log('getItem')
