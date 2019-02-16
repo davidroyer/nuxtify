@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <h1 class="display-3 mb-4" v-text="post.title" />
+  <div class="post">
+    <h1 class="display-2 mb-4" v-text="post.title" />
     <article class="content" v-html="post.html" />
-    <!-- <v-divider class="my-4" />
-    <pre>{{ post }}</pre> -->
   </div>
 </template>
 
@@ -11,7 +9,6 @@
 export default {
   asyncData({ app, params }) {
     return {
-      // post: app.$getPost(params.slug),
       post: app.$get('posts', params.slug)
     }
   },
