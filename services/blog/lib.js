@@ -42,6 +42,9 @@ blogContentWatcher.on('change', (filepath, root, stat) => {
 
   jsonState[newPostObject.slug] = newPostObject
   blogApi.write('posts/index.json', jsonState)
+
+  const tagsObject = createTagsObject(arrayFromObject(jsonState))
+  blogApi.write(`tags/index.json`, tagsObject)
 })
 
 /**
