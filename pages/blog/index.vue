@@ -1,5 +1,8 @@
 <template>
   <div>
+    <nuxt-link to="/blog/tags">
+      Tags
+    </nuxt-link>
     <v-list>
       <v-list-tile v-for="(post, key) in posts" :key="key">
         <nuxt-link :to="`/blog/${post.slug}`" class="title" v-text="post.title" />

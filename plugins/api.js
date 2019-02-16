@@ -15,32 +15,11 @@ export default (context, inject) => {
   inject('slug', slug)
   inject('article', article)
 
-  inject('getPost', slug => {
-    console.log('IN getArticle')
-    return require(`@/_jsonApi/posts`)[slug]
-  })
-
-  inject('getPosts', () => {
-    console.log('IN getArticle')
-    return require(`@/_jsonApi/posts`)
-  })
+  inject('getPost', slug => require(`@/_jsonApi/posts`)[slug])
+  inject('getPosts', () => require(`@/_jsonApi/posts`))
 
   inject('get', (collection, slug) => {
     if (slug) return require(`@/_jsonApi/${collection}`)[slug]
     else return require(`@/_jsonApi/${collection}`)
   })
 }
-
-// Vue.prototype.$api = api
-
-/**
- * THIS BELOW WORKS
- */
-// Vue.prototype.$getPost = function() {
-//   const slug = this.$route.params.slug
-//   return require(`@/_jsonApi/posts`)[slug]
-// }
-
-// Vue.prototype.$getPosts = function() {
-//   return require(`@/_jsonApi/posts`)
-// }
