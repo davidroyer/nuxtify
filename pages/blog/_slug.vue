@@ -14,19 +14,13 @@ export default {
   },
   head() {
     return {
-      title: this.post.title,
-      link: [
-        {
-          rel: 'stylesheet',
-          href:
-            'https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/themes/prism-tomorrow.css'
-        }
-      ]
+      title: this.post.title
     }
   }
 }
 </script>
-
+<style src="@@/node_modules/prismjs/themes/prism-tomorrow.css">
+</style>
 <style>
 code {
   box-shadow: none;
