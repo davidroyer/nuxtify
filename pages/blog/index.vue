@@ -17,11 +17,6 @@ export default {
       posts: app.$get('posts')
     }
   }
-  // computed: {
-  //   posts() {
-  //     return this.$getPosts()
-  //   }
-  // }
 }
 </script>
 

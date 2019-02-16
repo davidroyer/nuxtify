@@ -34,15 +34,13 @@ export function slugify(textToSlugify) {
     .replace(/^-+|-+$/g, '') // remove leading, trailing -
 }
 
-export const createTagsList = posts => {
+export const createTagsList = postsArray => {
   const tagsArray = []
-  for (let i = 0; i < posts.length; i++) {
-    if (posts[i].tags && posts[i].tags.length) {
-      for (let n = 0; n < posts[i].tags.length; n++) {
-        tagsArray.push(posts[i].tags[n])
-      }
+  postsArray.forEach(post => {
+    if (post.tags.length) {
+      post.tags.forEach(tag => tagsArray.push(tag))
     }
-  }
+  })
   return uniqueArray(tagsArray)
 }
 
@@ -52,7 +50,8 @@ export const getPostsFromTag = (posts, tag) =>
 export const slugifyText = str =>
   slugify(str, { replacement: '-', lower: true, remove: /[$*_+~.()'"!\-:@]/g })
 
-// exports.slugify = slugify
-// exports.titleCaseText = titleCaseText
-// exports.toTitleCase = toTitleCase
-// exports.removeExtension = removeExtension
+export const arrayToObject = (arr, keyField) =>
+  Object.assign({}, ...arr.map(item => ({ [item[keyField]]: item })))
+
+export const arrayFromObject = object =>
+  Object.keys(object).map(key => object[key])

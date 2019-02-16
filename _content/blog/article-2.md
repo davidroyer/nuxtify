@@ -3,8 +3,8 @@ title: New Title
 color: '#8e7944'
 id: 'vue-nuxt-blog'
 tags:
-  - NEWWW
-  - article 2 tag
+    - tag 1
+    - tag 3
 description: |
   How I created my new website with portfolio and blog in two languages. What technology I used and why. new
 ---

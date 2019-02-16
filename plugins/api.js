@@ -7,7 +7,7 @@ export default (context, inject) => {
 
   if (context.params.slug) {
     slug = context.params.slug
-    article = require(`@/json/posts`)[slug]
+    article = require(`@/_jsonApi/posts`)[slug]
   } else {
     slug = null
     article = null
@@ -17,17 +17,17 @@ export default (context, inject) => {
 
   inject('getPost', slug => {
     console.log('IN getArticle')
-    return require(`@/json/posts`)[slug]
+    return require(`@/_jsonApi/posts`)[slug]
   })
 
   inject('getPosts', () => {
     console.log('IN getArticle')
-    return require(`@/json/posts`)
+    return require(`@/_jsonApi/posts`)
   })
 
   inject('get', (collection, slug) => {
-    if (slug) return require(`@/json/${collection}`)[slug]
-    else return require(`@/json/${collection}`)
+    if (slug) return require(`@/_jsonApi/${collection}`)[slug]
+    else return require(`@/_jsonApi/${collection}`)
   })
 }
 
@@ -38,9 +38,9 @@ export default (context, inject) => {
  */
 // Vue.prototype.$getPost = function() {
 //   const slug = this.$route.params.slug
-//   return require(`@/json/posts`)[slug]
+//   return require(`@/_jsonApi/posts`)[slug]
 // }
 
 // Vue.prototype.$getPosts = function() {
-//   return require(`@/json/posts`)
+//   return require(`@/_jsonApi/posts`)
 // }

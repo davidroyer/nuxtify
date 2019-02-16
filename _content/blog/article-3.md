@@ -1,5 +1,7 @@
 ---
 title: NEW 3a
+    - tag 1
+    - tag 2
 ---
 
 
