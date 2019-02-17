@@ -1,15 +1,15 @@
 <template>
   <div>
-    <nuxt-link to="/blog/tags">
+    <nuxt-link to="/projects/tags">
       Tags
     </nuxt-link>
     <v-list>
-      <v-list-tile v-for="(post, key) in posts" :key="key">
-        <nuxt-link :to="`/blog/${post.slug}`" class="title" v-text="post.title" />
+      <v-list-tile v-for="(project, key) in projects" :key="key">
+        <nuxt-link :to="`/projects/${project.slug}`" class="title" v-text="project.title" />
       </v-list-tile>
     </v-list>
     <v-divider class="my-4" />
-    <pre>{{ posts }}</pre>
+    <pre>{{ projects }}</pre>
   </div>
 </template>
 
@@ -17,7 +17,7 @@
 export default {
   asyncData({ app, params }) {
     return {
-      posts: app.$get('blog')
+      projects: app.$get('projects')
     }
   }
 }

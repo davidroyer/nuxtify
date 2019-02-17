@@ -15,7 +15,6 @@ import {
 
 const ContentPath = `_content`
 const ApiPath = `_jsonApi`
-
 const Content = jetpack.cwd(ContentPath)
 const API = jetpack.cwd(ApiPath)
 
@@ -39,12 +38,15 @@ setupBeforeInit(CONFIG)
 ContentWatcher.on('ready', () => {
   console.log('Creating JSON Files from markdown files...')
   initialWrite()
+  console.log('Done. Files Created!')
 })
 
 /**
  * Handles content changing of existing files
  */
 ContentWatcher.on('change', (filepath, root, stat) => {
+  console.log(filepath)
+
   const collectionName = path.dirname(filepath)
   const filename = path.basename(filepath, path.extname(filepath))
   const jsonState = API.read(`${collectionName}/index.json`, 'json')
@@ -61,11 +63,11 @@ ContentWatcher.on('change', (filepath, root, stat) => {
  * Handles new files created
  */
 ContentWatcher.on('add', (filepath, root, stat) => {
-  const jsonState = API.read('posts/index.json', 'json')
+  const jsonState = API.read(`${path.dirname(filepath)}/index.json`, 'json')
   const newPostObject = createContentObject(filepath)
 
   jsonState[newPostObject.slug] = newPostObject
-  API.write('posts/index.json', jsonState)
+  API.write(`${path.dirname(filepath)}/index.json`, jsonState)
 
   // const tagsObject = createTagsObject(arrayFromObject(jsonState))
   // API.write(`tags/index.json`, tagsObject)
@@ -75,11 +77,11 @@ ContentWatcher.on('add', (filepath, root, stat) => {
  * Handles files that are deleted
  */
 ContentWatcher.on('delete', (filepath, root) => {
-  const jsonState = API.read('posts/index.json', 'json')
+  const jsonState = API.read(`${path.dirname(filepath)}/index.json`, 'json')
   const slugOfDeletedPost = removeExtension(filepath)
 
   delete jsonState[slugOfDeletedPost]
-  API.write('posts/index.json', jsonState)
+  API.write(`${path.dirname(filepath)}/index.json`, jsonState)
 
   // const tagsObject = createTagsObject(arrayFromObject(jsonState))
   // API.write(`tags/index.json`, tagsObject)
@@ -91,7 +93,9 @@ ContentWatcher.on('delete', (filepath, root) => {
 function initialWrite() {
   collectionDirectories.forEach(collection => {
     const collectionObject = {}
-    const mdFilesArray = Content.find(collection, { matching: './*.md' })
+    const mdFilesArray = Content.find(collection, {
+      matching: './*.md'
+    })
 
     // Add the data to the postsArray variable we setup initially
     mdFilesArray.forEach(mdFile => {
@@ -131,11 +135,12 @@ const createTagObject = (tag, postsArray) => {
 }
 
 function createContentObject(mdFile) {
+  const fileName = getFileName(mdFile)
   const mdFileData = mdFileParser(Content.read(mdFile))
   // If slug is not set, automatically generate it from the filename by removing the extension
   const slug = mdFileData.attributes.slug
     ? mdFileData.attributes.slug
-    : removeExtension(mdFile)
+    : fileName
 
   // If title is not set, automatically generate it from the slug
   const title = mdFileData.attributes.title
@@ -153,8 +158,13 @@ function createContentObject(mdFile) {
   }
 }
 
+const getDirectoryName = filepath => path.dirname(filepath)
+const getFileName = filepath => path.basename(filepath, path.extname(filepath))
+
 function setupBeforeInit(config) {
-  jetpack.dir(config.ApiPath, { empty: true })
+  jetpack.dir(config.ApiPath, {
+    empty: true
+  })
 }
 /* --------------------------------------------------------------------- */
 

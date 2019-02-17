@@ -16,6 +16,11 @@ export default {
     to: '/blog',
     description: 'Blog posts'
   },
+  projects: {
+    label: 'Projects',
+    to: '/projects',
+    description: 'projects posts'
+  },
   contact: {
     label: 'Contact Us',
     to: '/contact',

@@ -1,8 +1,8 @@
-import path from 'path'
-import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
-import siteMeta from './config/meta'
-import siteConfig from './config/site'
-import { generateRoutes } from './services/blog/generate'
+import path from 'path';
+import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin';
+import siteMeta from './config/meta';
+import siteConfig from './config/site';
+import { generateRoutes } from './services/blog/generate';
 
 export default {
   watch: ['~/config/*'],
@@ -17,7 +17,7 @@ export default {
   generate: {
     fallback: true,
     routes: function() {
-      const blogPosts = require('./_jsonApi/posts/index.json')
+      const blogPosts = require('./_jsonApi/blog/index.json')
       return generateRoutes(blogPosts)
     }
   },

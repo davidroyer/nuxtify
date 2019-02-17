@@ -1,8 +1,8 @@
 {
-  "projects/project-1": {
+  "project-1": {
     "title": "Project 1 Custom Title",
-    "slug": "projects/project-1",
+    "slug": "project-1",
     "tags": [],
-    "html": "<h2>some project info</h2>\n<h3>new2</h3>\n<p>davidroyer</p>\n"
+    "html": "<h2>some project info</h2>\n<h3>new2</h3>\n<p>davidroyer3</p>\n"
   }
 }

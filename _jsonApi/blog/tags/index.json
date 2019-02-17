@@ -4,17 +4,17 @@
     "posts": [
       {
         "title": "Article 1 Custom Title",
-        "slug": "blog/article-1",
+        "slug": "article-1",
         "tags": [
           "tag 1",
           "tag 2",
           "tag 4"
         ],
-        "html": "<h2>Content here</h2>\n"
+        "html": "<h2>Content here</h2>\n<h3>added</h3>\n"
       },
       {
         "title": "New Title",
-        "slug": "blog/article-2",
+        "slug": "article-2",
         "tags": [
           "tag 1",
           "tag 3"
@@ -25,8 +25,8 @@
         "description": "How I created my new website with portfolio and blog in two languages. What technology I used and why. new\n"
       },
       {
-        "title": "Blog/dev Test",
-        "slug": "blog/dev-test",
+        "title": "Dev Test",
+        "slug": "dev-test",
         "tags": [
           "tag 1",
           "tag 2"
@@ -42,17 +42,17 @@
     "posts": [
       {
         "title": "Article 1 Custom Title",
-        "slug": "blog/article-1",
+        "slug": "article-1",
         "tags": [
           "tag 1",
           "tag 2",
           "tag 4"
         ],
-        "html": "<h2>Content here</h2>\n"
+        "html": "<h2>Content here</h2>\n<h3>added</h3>\n"
       },
       {
-        "title": "Blog/dev Test",
-        "slug": "blog/dev-test",
+        "title": "Dev Test",
+        "slug": "dev-test",
         "tags": [
           "tag 1",
           "tag 2"
@@ -68,13 +68,13 @@
     "posts": [
       {
         "title": "Article 1 Custom Title",
-        "slug": "blog/article-1",
+        "slug": "article-1",
         "tags": [
           "tag 1",
           "tag 2",
           "tag 4"
         ],
-        "html": "<h2>Content here</h2>\n"
+        "html": "<h2>Content here</h2>\n<h3>added</h3>\n"
       }
     ],
     "slug": "tag-4",
@@ -85,7 +85,7 @@
     "posts": [
       {
         "title": "New Title",
-        "slug": "blog/article-2",
+        "slug": "article-2",
         "tags": [
           "tag 1",
           "tag 3"
@@ -97,7 +97,7 @@
       },
       {
         "title": "Custom 3bssaass",
-        "slug": "blog/test2",
+        "slug": "test2",
         "tags": [
           "tag 3"
         ],
@@ -112,7 +112,7 @@
     "posts": [
       {
         "title": "My Quest For the Ultimate Nuxt.js Wesbite Template 12H",
-        "slug": "blog/test",
+        "slug": "test",
         "tags": [
           "nuxt",
           "vue"
@@ -129,7 +129,7 @@
     "posts": [
       {
         "title": "My Quest For the Ultimate Nuxt.js Wesbite Template 12H",
-        "slug": "blog/test",
+        "slug": "test",
         "tags": [
           "nuxt",
           "vue"

@@ -1,7 +1,7 @@
 <template>
-  <div class="post">
-    <h1 class="display-2 mb-4" v-text="post.title" />
-    <article class="content" v-html="post.html" />
+  <div class="project">
+    <h1 class="display-2 mb-4" v-text="project.title" />
+    <article class="content" v-html="project.html" />
   </div>
 </template>
 
@@ -9,12 +9,12 @@
 export default {
   asyncData({ app, params }) {
     return {
-      post: app.$get('blog', params.slug)
+      project: app.$get('projects', params.slug)
     }
   },
   head() {
     return {
-      title: this.post.title
+      title: this.project.title
     }
   }
 }

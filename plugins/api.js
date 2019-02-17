@@ -7,7 +7,7 @@ export default (context, inject) => {
 
   if (context.params.slug) {
     slug = context.params.slug
-    article = require(`@/_jsonApi/posts`)[slug]
+    article = require(`@/_jsonApi/blog`)[slug]
   } else {
     slug = null
     article = null
@@ -15,8 +15,8 @@ export default (context, inject) => {
   inject('slug', slug)
   inject('article', article)
 
-  inject('getPost', slug => require(`@/_jsonApi/posts`)[slug])
-  inject('getPosts', () => require(`@/_jsonApi/posts`))
+  inject('getPost', slug => require(`@/_jsonApi/blog`)[slug])
+  inject('getPosts', () => require(`@/_jsonApi/blog`))
 
   inject('get', (collection, slug) => {
     if (slug) return require(`@/_jsonApi/${collection}`)[slug]
