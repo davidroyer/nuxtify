@@ -1,0 +1,134 @@
+{
+  "tag-1": {
+    "name": "tag 1",
+    "posts": [
+      {
+        "title": "Article 1 Custom Title",
+        "slug": "article-1",
+        "tags": [
+          "tag 1",
+          "tag 2",
+          "tag 4"
+        ]
+      },
+      {
+        "title": "New Title",
+        "slug": "article-2",
+        "tags": [
+          "tag 1",
+          "tag 3"
+        ],
+        "color": "#8e7944",
+        "id": "vue-nuxt-blog",
+        "description": "How I created my new website with portfolio and blog in two languages. What technology I used and why. new\n"
+      },
+      {
+        "title": "Dev Test",
+        "slug": "dev-test",
+        "tags": [
+          "tag 1",
+          "tag 2"
+        ]
+      }
+    ],
+    "slug": "tag-1",
+    "title": "Tag 1"
+  },
+  "tag-2": {
+    "name": "tag 2",
+    "posts": [
+      {
+        "title": "Article 1 Custom Title",
+        "slug": "article-1",
+        "tags": [
+          "tag 1",
+          "tag 2",
+          "tag 4"
+        ]
+      },
+      {
+        "title": "Dev Test",
+        "slug": "dev-test",
+        "tags": [
+          "tag 1",
+          "tag 2"
+        ]
+      }
+    ],
+    "slug": "tag-2",
+    "title": "Tag 2"
+  },
+  "tag-4": {
+    "name": "tag 4",
+    "posts": [
+      {
+        "title": "Article 1 Custom Title",
+        "slug": "article-1",
+        "tags": [
+          "tag 1",
+          "tag 2",
+          "tag 4"
+        ]
+      }
+    ],
+    "slug": "tag-4",
+    "title": "Tag 4"
+  },
+  "tag-3": {
+    "name": "tag 3",
+    "posts": [
+      {
+        "title": "New Title",
+        "slug": "article-2",
+        "tags": [
+          "tag 1",
+          "tag 3"
+        ],
+        "color": "#8e7944",
+        "id": "vue-nuxt-blog",
+        "description": "How I created my new website with portfolio and blog in two languages. What technology I used and why. new\n"
+      },
+      {
+        "title": "Custom 3bssaass",
+        "slug": "test2",
+        "tags": [
+          "tag 3"
+        ]
+      }
+    ],
+    "slug": "tag-3",
+    "title": "Tag 3"
+  },
+  "nuxt": {
+    "name": "nuxt",
+    "posts": [
+      {
+        "title": "My Quest For the Ultimate Nuxt.js Wesbite Template 12H",
+        "slug": "test",
+        "tags": [
+          "nuxt",
+          "vue"
+        ],
+        "description": "Nuxtify, a Nuxt.js Website Boilerplate with Vuetify is introduced. It aims to be reusable, reliable, and scalable"
+      }
+    ],
+    "slug": "nuxt",
+    "title": "Nuxt"
+  },
+  "vue": {
+    "name": "vue",
+    "posts": [
+      {
+        "title": "My Quest For the Ultimate Nuxt.js Wesbite Template 12H",
+        "slug": "test",
+        "tags": [
+          "nuxt",
+          "vue"
+        ],
+        "description": "Nuxtify, a Nuxt.js Website Boilerplate with Vuetify is introduced. It aims to be reusable, reliable, and scalable"
+      }
+    ],
+    "slug": "vue",
+    "title": "Vue"
+  }
+}

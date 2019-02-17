@@ -1,0 +1,32 @@
+{
+  "project-tag-1": {
+    "name": "project tag 1",
+    "posts": [
+      {
+        "title": "Project 2 Custom Title",
+        "slug": "project-2",
+        "tags": [
+          "project tag 1",
+          "project tag 2"
+        ]
+      }
+    ],
+    "slug": "project-tag-1",
+    "title": "Project tag 1"
+  },
+  "project-tag-2": {
+    "name": "project tag 2",
+    "posts": [
+      {
+        "title": "Project 2 Custom Title",
+        "slug": "project-2",
+        "tags": [
+          "project tag 1",
+          "project tag 2"
+        ]
+      }
+    ],
+    "slug": "project-tag-2",
+    "title": "Project tag 2"
+  }
+}
