@@ -16,9 +16,17 @@ export default {
 
   generate: {
     fallback: true,
-    routes: function() {
-      const blogPosts = require('./_jsonApi/blog/index.json')
-      return generateRoutes(blogPosts)
+    routes: () => {
+      const blogRoutes = generateRoutes(
+        'blog',
+        require(`./_jsonApi/blog/index.json`)
+      )
+      const projectRoutes = generateRoutes(
+        'projects',
+        require(`./_jsonApi/projects/index.json`)
+      )
+      
+      return [...blogRoutes, ...projectRoutes]
     }
   },
 

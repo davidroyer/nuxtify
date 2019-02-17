@@ -13,21 +13,28 @@ import {
   titleCaseText
 } from './utils'
 
-const ContentPath = `_content`
-const ApiPath = `_jsonApi`
-const Content = jetpack.cwd(ContentPath)
-const API = jetpack.cwd(ApiPath)
+// const options = {
+//   contentDirectory,
+//   apiDirectory,
+//   CONTENT,
+//   API
+// }
+
+const contentDirectory = `_content`
+const apiDirectory = `_jsonApi`
+const Content = jetpack.cwd(contentDirectory)
+const API = jetpack.cwd(apiDirectory)
 
 const rootMarkdownFiles = Content.list().filter(item => /\.md$/g.test(item))
 const collectionDirectories = Content.list().filter(
   item => !/\.md$/g.test(item)
 )
 
-const ContentWatcher = watcher.create(`./${ContentPath}`)
+const ContentWatcher = watcher.create(`./${contentDirectory}`)
 
 const CONFIG = {
-  ContentPath,
-  ApiPath,
+  contentDirectory,
+  apiDirectory,
   Content,
   API,
   ContentWatcher
@@ -162,7 +169,7 @@ const getDirectoryName = filepath => path.dirname(filepath)
 const getFileName = filepath => path.basename(filepath, path.extname(filepath))
 
 function setupBeforeInit(config) {
-  jetpack.dir(config.ApiPath, {
+  jetpack.dir(config.apiDirectory, {
     empty: true
   })
 }

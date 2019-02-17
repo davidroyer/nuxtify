@@ -4,5 +4,14 @@
     "slug": "project-1",
     "tags": [],
     "html": "<h2>some project info</h2>\n<h3>new2</h3>\n<p>davidroyer3</p>\n"
+  },
+  "project-2": {
+    "title": "Project 2 Custom Title",
+    "slug": "project-2",
+    "tags": [
+      "project tag 1",
+      "project tag 2"
+    ],
+    "html": "<h2>Info for project 2</h2>\n"
   }
 }

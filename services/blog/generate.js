@@ -1,5 +1,8 @@
-const generateRoutes = function(routesObject) {
-  return Object.keys(routesObject).map(routeSlug => `/blog/${routeSlug}`)
+export const generateRoutes = (routesPath, routesData) => {
+  return Object.keys(routesData).map(routeSlug => `/${routesPath}/${routeSlug}`)
 }
 
-exports.generateRoutes = generateRoutes
+// export const generateRoutes = (routesPath, collectionName = routesPath) => {
+//   const routesData = require(`./_jsonApi/${collectionName}/index.json`)
+//   return Object.keys(routesData).map(routeSlug => `/${routesPath}/${routeSlug}`)
+// }

@@ -1,12 +1,14 @@
-/* eslint-disable no-console */
-// export default () => {}
+export default class CollectionsApi {
+  constructor(options) {
+    this.options = options
+    this.apiDirectory = options.apiDirectory
+  }
 
-export const getPost = slug => require(`@/_jsonApi/blog`)[slug]
-export const getPosts = () => require(`@/_jsonApi/blog`)
-
-export const getItem = (collection, slug) => {
-  console.log('getItem')
-  return require(`@/_jsonApi/${collection}`)[slug]
+  getTest(collection, slug) {
+    if (slug) {
+      return require(`@/${this.apiDirectory}/${collection}`)[slug]
+    } else {
+      return require(`@/${this.apiDirectory}/${collection}`)
+    }
+  }
 }
-
-export const getCollection = collection => require(`@/_jsonApi/${collection}`)
