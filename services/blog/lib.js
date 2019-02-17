@@ -114,7 +114,10 @@ function initialWrite() {
     /**
      * Create tags and posts JSON files
      */
-    const tagsObject = createTagsObject(arrayFromObject(collectionObject))
+    const collectionArray = arrayFromObject(collectionObject)
+    const slimmedCollectionArray = createSlimmedCollectionArray(collectionArray)
+    const tagsObject = createTagsObject(slimmedCollectionArray)
+
     API.write(`${collection}/tags/index.json`, tagsObject)
   })
 }
@@ -167,6 +170,13 @@ function createContentObject(mdFile) {
 
 const getDirectoryName = filepath => path.dirname(filepath)
 const getFileName = filepath => path.basename(filepath, path.extname(filepath))
+
+const createSlimmedCollectionArray = collectionArray => {
+  return collectionArray.map(item => {
+    delete item.html
+    return item
+  })
+}
 
 function setupBeforeInit(config) {
   jetpack.dir(config.apiDirectory, {
