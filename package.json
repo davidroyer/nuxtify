@@ -5,9 +5,9 @@
   "author": "David Royer",
   "private": true,
   "scripts": {
-    "dev": "yarn dev:api & nuxt",
-    "dev:blog": "yarn dev:api & nuxt",
-    "dev:api": "node services/blog",
+    "dev": "yarn api & nuxt",
+    "dev:blog": "yarn api & nuxt",
+    "api": "node services/blog",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "serve": "yarn http-server dist",

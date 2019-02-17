@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-import mdFileParser from 'front-matter'
-import jetpack from 'fs-jetpack'
+import path from 'path';
+import mdFileParser from 'front-matter';
+import jetpack from 'fs-jetpack';
 import md from './core/md'
 import watcher from './core/watcher'
 import {
@@ -11,24 +13,30 @@ import {
   titleCaseText
 } from './utils'
 
-const blogContentPath = `_content/blog`
-const blogApiPath = `_jsonApi`
+const ContentPath = `_content`
+const ApiPath = `_jsonApi`
 
-const blogContent = jetpack.cwd(blogContentPath)
-const blogApi = jetpack.cwd(blogApiPath)
-const blogContentWatcher = watcher.create(`./${blogContentPath}`)
+const Content = jetpack.cwd(ContentPath)
+const API = jetpack.cwd(ApiPath)
+
+const rootMarkdownFiles = Content.list().filter(item => /\.md$/g.test(item))
+const collectionDirectories = Content.list().filter(
+  item => !/\.md$/g.test(item)
+)
+
+const ContentWatcher = watcher.create(`./${ContentPath}`)
 
 const CONFIG = {
-  blogContentPath,
-  blogApiPath,
-  blogContent,
-  blogApi,
-  blogContentWatcher
+  ContentPath,
+  ApiPath,
+  Content,
+  API,
+  ContentWatcher
 }
 
 setupBeforeInit(CONFIG)
 
-blogContentWatcher.on('ready', () => {
+ContentWatcher.on('ready', () => {
   console.log('Creating JSON Files from markdown files...')
   initialWrite()
 })
@@ -36,64 +44,68 @@ blogContentWatcher.on('ready', () => {
 /**
  * Handles content changing of existing files
  */
-blogContentWatcher.on('change', (filepath, root, stat) => {
-  const jsonState = blogApi.read('posts/index.json', 'json')
+ContentWatcher.on('change', (filepath, root, stat) => {
+  const collectionName = path.dirname(filepath)
+  const filename = path.basename(filepath, path.extname(filepath))
+  const jsonState = API.read(`${collectionName}/index.json`, 'json')
   const newPostObject = createContentObject(filepath)
 
   jsonState[newPostObject.slug] = newPostObject
-  blogApi.write('posts/index.json', jsonState)
+  API.write(`${collectionName}/index.json`, jsonState)
 
-  const tagsObject = createTagsObject(arrayFromObject(jsonState))
-  blogApi.write(`tags/index.json`, tagsObject)
+  // const tagsObject = createTagsObject(arrayFromObject(jsonState))
+  // API.write(`tags/index.json`, tagsObject)
 })
 
 /**
  * Handles new files created
  */
-blogContentWatcher.on('add', (filepath, root, stat) => {
-  const jsonState = blogApi.read('posts/index.json', 'json')
+ContentWatcher.on('add', (filepath, root, stat) => {
+  const jsonState = API.read('posts/index.json', 'json')
   const newPostObject = createContentObject(filepath)
 
   jsonState[newPostObject.slug] = newPostObject
-  blogApi.write('posts/index.json', jsonState)
+  API.write('posts/index.json', jsonState)
 
-  const tagsObject = createTagsObject(arrayFromObject(jsonState))
-  blogApi.write(`tags/index.json`, tagsObject)
+  // const tagsObject = createTagsObject(arrayFromObject(jsonState))
+  // API.write(`tags/index.json`, tagsObject)
 })
 
 /**
  * Handles files that are deleted
  */
-blogContentWatcher.on('delete', (filepath, root) => {
-  const jsonState = blogApi.read('posts/index.json', 'json')
+ContentWatcher.on('delete', (filepath, root) => {
+  const jsonState = API.read('posts/index.json', 'json')
   const slugOfDeletedPost = removeExtension(filepath)
 
   delete jsonState[slugOfDeletedPost]
-  blogApi.write('posts/index.json', jsonState)
+  API.write('posts/index.json', jsonState)
 
-  const tagsObject = createTagsObject(arrayFromObject(jsonState))
-  blogApi.write(`tags/index.json`, tagsObject)
+  // const tagsObject = createTagsObject(arrayFromObject(jsonState))
+  // API.write(`tags/index.json`, tagsObject)
 })
 
 /**
  * Handles setting up the json files initially
  */
 function initialWrite() {
-  const postsObject = {}
-  const mdFilesArray = blogContent.find({ matching: ['*.md'] })
+  collectionDirectories.forEach(collection => {
+    const collectionObject = {}
+    const mdFilesArray = Content.find(collection, { matching: './*.md' })
 
-  // Add the data to the postsArray variable we setup initially
-  mdFilesArray.forEach(mdFile => {
-    const postDataObject = createContentObject(mdFile)
-    postsObject[postDataObject.slug] = postDataObject
+    // Add the data to the postsArray variable we setup initially
+    mdFilesArray.forEach(mdFile => {
+      const contentData = createContentObject(mdFile)
+      collectionObject[contentData.slug] = contentData
+    })
+    API.write(`${collection}/index.json`, collectionObject)
+
+    /**
+     * Create tags and posts JSON files
+     */
+    const tagsObject = createTagsObject(arrayFromObject(collectionObject))
+    API.write(`${collection}/tags/index.json`, tagsObject)
   })
-  blogApi.write('posts/index.json', postsObject)
-
-  /**
-   * Create tags and posts JSON files
-   */
-  const tagsObject = createTagsObject(arrayFromObject(postsObject))
-  blogApi.write(`tags/index.json`, tagsObject)
 }
 
 const createTagsObject = postsArray => {
@@ -119,7 +131,7 @@ const createTagObject = (tag, postsArray) => {
 }
 
 function createContentObject(mdFile) {
-  const mdFileData = mdFileParser(blogContent.read(mdFile))
+  const mdFileData = mdFileParser(Content.read(mdFile))
   // If slug is not set, automatically generate it from the filename by removing the extension
   const slug = mdFileData.attributes.slug
     ? mdFileData.attributes.slug
@@ -142,7 +154,7 @@ function createContentObject(mdFile) {
 }
 
 function setupBeforeInit(config) {
-  jetpack.dir(config.blogApiPath, { empty: true })
+  jetpack.dir(config.ApiPath, { empty: true })
 }
 /* --------------------------------------------------------------------- */
 

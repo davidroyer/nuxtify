@@ -2,7 +2,7 @@ const sane = require('sane')
 
 export default {
   create(dirToWatch, options = {}) {
-    return sane(dirToWatch, options)
+    return sane(dirToWatch, { glob: ['**/*.md'] })
   }
 }
 
