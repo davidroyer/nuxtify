@@ -114,11 +114,7 @@ function initialWrite() {
     /**
      * Create tags and posts JSON files
      */
-    const collectionArray = arrayFromObject(collectionObject)
-    const slimmedCollectionArray = createSlimmedCollectionArray(collectionArray)
-    const tagsObject = createTagsObject(slimmedCollectionArray)
-
-    API.write(`${collection}/tags/index.json`, tagsObject)
+    handleTags(collection, collectionObject)
   })
 }
 
@@ -142,6 +138,14 @@ const createTagObject = (tag, postsArray) => {
     slug: slugify(tag),
     title: titleCaseText(tag)
   }
+}
+
+const handleTags = (collection, collectionObject) => {
+  const collectionArray = arrayFromObject(collectionObject)
+  const slimmedCollectionArray = createSlimmedCollectionArray(collectionArray)
+  const tagsObject = createTagsObject(slimmedCollectionArray)
+
+  API.write(`${collection}/tags/index.json`, tagsObject)
 }
 
 function createContentObject(mdFile) {
@@ -169,6 +173,7 @@ function createContentObject(mdFile) {
 }
 
 const getDirectoryName = filepath => path.dirname(filepath)
+
 const getFileName = filepath => path.basename(filepath, path.extname(filepath))
 
 const createSlimmedCollectionArray = collectionArray => {
