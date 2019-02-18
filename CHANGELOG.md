@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.8.1"></a>
+## [0.8.1](https://github.com/davidroyer/nuxtify/compare/v0.8.0...v0.8.1) (2019-02-18)
+
+
+### Performance Improvements
+
+* Removes nuxt-axios ([91f2775](https://github.com/davidroyer/nuxtify/commit/91f2775))
+* **layout:** Changes VSiteFooter to regular import instead of async ([e8dde5c](https://github.com/davidroyer/nuxtify/commit/e8dde5c))
+
+
+
 <a name="0.8.0"></a>
 # [0.8.0](https://github.com/davidroyer/nuxtify/compare/v0.7.1...v0.8.0) (2019-02-11)
 
