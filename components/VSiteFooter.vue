@@ -12,7 +12,7 @@
           :aria-label="`Link to our ${icon} page`"
           icon
         >
-          <img width="30px" :alt="`Image icon for ${icon}`" role="presentation" :src="require(`~/assets/svg-icons/${icon}.svg`)">
+          <component :is="icon" width="30px" :alt="`Image icon for ${icon}`" role="presentation" />
         </v-btn>
       </v-card-text>
 
@@ -38,9 +38,14 @@
 </template>
 
 <script>
+import TwitterLogo from '@/assets/svg-icons/twitter.svg'
+import FacebookLogo from '@/assets/svg-icons/facebook.svg'
+import LinkedinLogo from '@/assets/svg-icons/linkedin.svg'
+
 export default {
+  components: { TwitterLogo, FacebookLogo, LinkedinLogo },
   data: () => ({
-    icons: ['facebook', 'twitter', 'linkedin']
+    icons: ['FacebookLogo', 'TwitterLogo', 'LinkedinLogo']
   })
 }
 </script>

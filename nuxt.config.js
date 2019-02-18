@@ -1,6 +1,7 @@
 import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 import siteMeta from './config/meta'
 import siteConfig from './config/site'
+import { addSvgLoader } from './utils'
 
 export default {
   watch: ['~/config/*'],
@@ -77,6 +78,8 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
+      addSvgLoader(config)
+
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
