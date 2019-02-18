@@ -11,13 +11,14 @@
 import VMobileNav from '@/components/VMobileNav.vue'
 import VSiteContent from '@/components/VSiteContent.vue'
 import VSiteHeader from '@/components/VSiteHeader.vue'
+import VSiteFooter from '@/components/VSiteFooter.vue'
 
 export default {
   components: {
     VMobileNav,
     VSiteContent,
     VSiteHeader,
-    VSiteFooter: () => import('@/components/VSiteFooter.vue')
+    VSiteFooter
   }
 }
 </script>
