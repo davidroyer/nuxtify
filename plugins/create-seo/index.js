@@ -1,10 +1,6 @@
 /* eslint-disable no-console */
 import siteNav from '@/config/navigation'
-import {
-  createDefaultMeta,
-  createRouteMeta,
-  setupRoutesMeta
-} from '@/utils/seo'
+import { createDefaultMeta, createRouteMeta, setupRoutesMeta } from './helpers'
 import Vue from 'vue'
 
 setupRoutesMeta(siteNav)
