@@ -4,10 +4,6 @@
       <v-card>
         <v-card-title class="headline">
           Welcome to Nuxtify
-      
-          <nuxt-link to="/posts">
-            Posts
-          </nuxt-link>
         </v-card-title>
         <v-card-text>
           <p>Nuxtify is a Nuxt.js Website Boilerplate with Vuetify. It aims to be reusable, reliable, and scalable.</p>
