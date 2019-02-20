@@ -17,7 +17,6 @@
 export default {
   asyncData({ app, params }) {
     return {
-      // posts: app.$getCollection
       posts: app.$get('blog')
     }
   }
