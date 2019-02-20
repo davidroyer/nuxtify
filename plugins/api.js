@@ -4,9 +4,9 @@
 const collectionRoutes = ['blog', 'projects']
 
 export default (context, inject) => {
-  const [baseRoute] = context.route.name.split('-')
-
   if (context.isDev) {
+    const [baseRoute] = context.route.name.split('-')
+
     console.log('isDev - Should inject collections and collection items')
 
     if (collectionRoutes.includes(baseRoute)) {
