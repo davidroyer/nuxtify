@@ -10,7 +10,7 @@
     "html": "<p>a</p>\n<h2>Content here</h2>\n<h3>added</h3>\n"
   },
   "article-2": {
-    "title": "New Title",
+    "title": "New Title b",
     "slug": "article-2",
     "tags": [
       "tag 1",

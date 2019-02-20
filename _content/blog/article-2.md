@@ -1,5 +1,5 @@
 ---
-title: New Title
+title: New Title b
 color: '#8e7944'
 id: 'vue-nuxt-blog'
 tags:
