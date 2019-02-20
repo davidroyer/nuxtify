@@ -9,7 +9,6 @@
       </v-list-tile>
     </v-list>
     <v-divider class="my-4" />
-    <pre>{{ posts }}</pre>
   </div>
 </template>
 
