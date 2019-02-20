@@ -6,18 +6,20 @@ const collectionRoutes = ['blog', 'projects']
 export default (context, inject) => {
   const [baseRoute] = context.route.name.split('-')
 
-  // if (context.isDev) {
-  if (collectionRoutes.includes(baseRoute)) {
-    if (context.params.slug) {
-      inject(
-        'collectionItem',
-        require(`@/_jsonApi/${baseRoute}`)[context.params.slug].slug
-      )
-    } else {
-      inject('getCollection', require(`@/_jsonApi/${baseRoute}`))
+  if (context.isDev) {
+    console.log('isDev - Should inject collections and collection items')
+
+    if (collectionRoutes.includes(baseRoute)) {
+      if (context.params.slug) {
+        inject(
+          'collectionItem',
+          require(`@/_jsonApi/${baseRoute}`)[context.params.slug].slug
+        )
+      } else {
+        inject('getCollection', require(`@/_jsonApi/${baseRoute}`))
+      }
     }
   }
-  // }
 
   // if (context.params.slug) {
   //   slug = context.params.slug
