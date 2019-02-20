@@ -1,17 +1,32 @@
 /* eslint-disable no-console */
 // import * as api from '@/services/api'
 // import CollectionsApi from '@/services/api'
+const collectionRoutes = ['blog', 'projects']
 
 export default (context, inject) => {
-  const options = {
-    contentDirectory: '_content',
-    apiDirectory: '_jsonApi'
-  }
-  let slug
+  const [baseRoute] = context.route.name.split('-')
 
-  if (context.params.slug) slug = context.params.slug
-  else slug = null
-  inject('slug', slug)
+  // if (context.isDev) {
+  if (collectionRoutes.includes(baseRoute)) {
+    if (context.params.slug) {
+      inject(
+        'collectionItem',
+        require(`@/_jsonApi/${baseRoute}`)[context.params.slug].slug
+      )
+    } else {
+      inject('getCollection', require(`@/_jsonApi/${baseRoute}`))
+    }
+  }
+  // }
+
+  // if (context.params.slug) {
+  //   slug = context.params.slug
+  //   collectionItem = context.route
+  // } else {
+  //   slug = null
+  //   collectionItem = null
+  // }
+  // inject('slug', slug)
 
   inject('get', (collection, slug) => {
     if (slug) {

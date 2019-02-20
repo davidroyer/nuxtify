@@ -2,6 +2,7 @@
   <div class="post">
     <h1 class="display-2 mb-4" v-text="post.title" />
     <article class="content" v-html="post.html" />
+    <pre>{{ post }}</pre>
   </div>
 </template>
 
@@ -9,12 +10,13 @@
 export default {
   asyncData({ app, params }) {
     return {
+      // post: app.$getCollectionItem
       post: app.$get('blog', params.slug)
     }
   },
   head() {
     return {
-      title: this.post.title
+      // title: this.post.title
     }
   }
 }

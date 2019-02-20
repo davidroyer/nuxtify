@@ -2,6 +2,11 @@
   <v-app>
     <v-site-header />
     <v-site-content />
+    <!-- <v-content>
+    <v-container>
+      <nuxt id="nuxt-content" />
+    </v-container>
+  </v-content>     -->
     <v-mobile-nav />
     <v-site-footer />
   </v-app>
