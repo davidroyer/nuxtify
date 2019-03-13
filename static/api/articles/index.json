@@ -1,0 +1,17 @@
+{
+  "article-1": {
+    "title": "Custom Title BRANDH NEW 1a",
+    "slug": "article-1",
+    "tags": [
+      "tag 1",
+      "tag 2",
+      "tag 3",
+      "tag 4",
+      "tag 5"
+    ],
+    "html": "<p>ARTICLE 1</p>\n<h1>head 1</h1>\n<p><a href=\"https://www.google.com\" target=\"_blank\" rel=\"noopener\">I’m an inline-style link</a></p>\n<!-- \n![Image Test](~/assets/hero1.png) -->\n<h1>heading 1as</h1>\n<h2>Heading 2a</h2>\n<p>ssss</p>\n<p>:smile:</p>\n<h1>heading 1cb</h1>\n<h2>heading 2b</h2>\n<h2>heading 2</h2>\n<h3>heading 3</h3>\n",
+    "image": "hero1.png",
+    "date": "12-04-2019",
+    "description": "Some basic description for this article to use as an excerpt. It should include good info to entice someone to click to read more."
+  }
+}

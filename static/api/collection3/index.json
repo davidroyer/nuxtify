@@ -1,0 +1,8 @@
+{
+  "file-3": {
+    "title": "File 3",
+    "slug": "file-3",
+    "tags": [],
+    "html": "<p>file 3 content</p>\n<p>hello there@</p>\n"
+  }
+}

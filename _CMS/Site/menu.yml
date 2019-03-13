@@ -1,0 +1,10 @@
+index:
+    label: HomeB
+
+articles:
+    label: Articles
+    to: /articles
+
+projects:
+    label: Projects
+    to: /projects
