@@ -1,8 +1,8 @@
 import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
+import { cmsRoutesGenerator } from '@droyer/nuxtcms'
 import siteMeta from './config/meta'
 import siteConfig from './config/site'
 import { addSvgLoader } from './utils'
-
 export default {
   watch: ['~/config/*'],
 
@@ -44,7 +44,7 @@ export default {
 
   plugins: ['@/plugins/vuetify', '@/plugins/create-seo'],
 
-  modules: ['@nuxtjs/pwa', 'nuxt-webfontloader'],
+  modules: ['@nuxtjs/pwa', 'nuxt-webfontloader', '@droyer/nuxtcms'],
 
   // '@nuxtjs/google-analytics'
   // 'google-analytics': {
@@ -89,6 +89,22 @@ export default {
           exclude: /(node_modules)/
         })
       }
+    }
+  },
+
+  generate: {
+    fallback: true,
+    routes: () => {
+      const blogRoutes = cmsRoutesGenerator(
+        'articles',
+        require(`./static/api/articles`)
+      )
+      const projectRoutes = cmsRoutesGenerator(
+        'projects',
+        require(`./static/api/projects`)
+      )
+
+      return [...blogRoutes, ...projectRoutes]
     }
   }
 }

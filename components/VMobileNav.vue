@@ -8,7 +8,7 @@
         </v-btn>
       </v-list-tile>
       <v-list-tile
-        v-for="(route, key) in $store.state.navigationRoutes"
+        v-for="(route, key) in nav"
         :key="key"
         :to="route.to"
       >
@@ -31,6 +31,10 @@ export default {
       set(val) {
         this.setDrawer(val)
       }
+    },
+
+    nav() {
+      return this.$cmsApi.get('main-nav')
     }
   },
 
