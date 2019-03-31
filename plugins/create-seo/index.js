@@ -1,17 +1,19 @@
 /* eslint-disable no-console */
-import siteNav from '@/config/navigation'
+import siteNav from '@/static/api/main-nav'
 import { createDefaultMeta, createRouteMeta, setupRoutesMeta } from './helpers'
 import Vue from 'vue'
 
 setupRoutesMeta(siteNav)
 
-Vue.prototype.$createSeo = function(slug, baseMetaArray = []) {
+Vue.prototype.$createSeo = function(slug, route, baseMetaArray = []) {
+  // if (!siteNav[slug]) return {}
   return Object.entries(siteNav[slug].seo).reduce((acc, [key, actualValue]) => {
     const title = siteNav[slug].title === false ? null : siteNav[slug].label
     const description = siteNav[slug].description || null
     const defaultMetaArray = createDefaultMeta(
       process.env.baseUrl,
-      this.$route.path.substr(1),
+      route || this.$route.path.substr(1),
+      // this.$route.path.substr(1),
       title
     )
 
@@ -70,4 +72,8 @@ const retrieveMetaObjectArray = metaObject => {
       ? process.env.baseUrl + metaObject.content.substr(1)
       : metaObject.content
   }))
+}
+
+export default (ctx, inject) => {
+  ctx.$createSeo = Vue.prototype.$createSeo
 }

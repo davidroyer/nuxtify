@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="drawerState" temporary right fixed app>
+  <v-navigation-drawer v-model="drawerState" temporary right app>
     <v-list>
       <v-list-tile style="margin-bottom: -10px;">
         <v-spacer />

@@ -14,13 +14,11 @@
   "about": {
     "label": "About",
     "to": "/about",
-    "title": false,
     "description": "NEW4 Learn more about the people behind Developmint and get to know us before we get to know you!"
   },
   "contact": {
     "label": "Contact",
     "to": "/contact",
-    "title": false,
     "description": "Learn more about the people behind Developmint and get to know us before we get to know you!"
   }
 }

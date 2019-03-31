@@ -1,6 +1,17 @@
 <template>
   <v-app>
     <v-site-header />
+    <v-jumbotron :gradient="gradient" height="200px" dark>
+      <v-container fill-height class="pb-0">
+        <v-layout align-center>
+          <v-flex text-xs-center class="mt-4">
+            <h3 class="display-1 mb-0">
+              {{ $store.state.pageTitle }}
+            </h3>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-jumbotron>    
     <v-site-content />
     <v-mobile-nav />
     <v-site-footer />
@@ -19,7 +30,12 @@ export default {
     VSiteContent,
     VSiteHeader,
     VSiteFooter
-  }
+  },
+  data: () => ({
+    gradient:
+      '141deg,rgba(62,66,100,.65098),rgba(32,35,58,.75),71%,rgba(62,66,100,.65098)'
+    // gradient: 'to top, #7B1FA2, #E1BEE7'
+  })
 }
 </script>
 

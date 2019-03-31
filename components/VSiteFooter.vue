@@ -32,7 +32,6 @@
       <v-card-text class="white--text">
         &copy; {{ new Date().getFullYear() }}
       </v-card-text>
-      </v-card-text>   
     </v-card>
   </v-footer>
 </template>

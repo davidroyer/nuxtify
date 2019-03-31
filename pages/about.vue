@@ -25,8 +25,15 @@
 
 <script>
 export default {
+  // fetch({ store, route, params, $createSeo }) {
+  //   const metaInfo = $createSeo(route.name, route)
+  //   // eslint-disable-next-line no-console
+  //   console.log('headMeta', metaInfo)
+  //   store.commit('setPageMeta', metaInfo)
+  // },
+
   head() {
-    return this.$createSeo(this.$route.name)
+    // return this.$createSeo(this.$route.name)
   }
 }
 </script>

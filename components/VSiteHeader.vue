@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar dark color="primary" fixed app>
+  <v-toolbar color="" flat app>
     <v-toolbar-title>
       <nuxt-link to="/" v-text="$store.state.site.title" />
     </v-toolbar-title>

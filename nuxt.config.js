@@ -1,5 +1,5 @@
 import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
-import { cmsRoutesGenerator } from '@droyer/nuxtcms'
+import { cmsRouteGenerator } from '@droyer/nuxtcms'
 import siteMeta from './config/meta'
 import siteConfig from './config/site'
 import { addSvgLoader } from './utils'
@@ -91,15 +91,17 @@ export default {
       }
     }
   },
-
+  router: {
+    middleware: ['meta']
+  },
   generate: {
     fallback: true,
     routes: () => {
-      const blogRoutes = cmsRoutesGenerator(
+      const blogRoutes = cmsRouteGenerator(
         'articles',
         require(`./static/api/articles`)
       )
-      const projectRoutes = cmsRoutesGenerator(
+      const projectRoutes = cmsRouteGenerator(
         'projects',
         require(`./static/api/projects`)
       )

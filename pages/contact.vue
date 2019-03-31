@@ -8,7 +8,7 @@
       </div>      
       <v-contact-form />
     </v-flex>
-    </v-contact-form>
+    <!-- </v-contact-form> -->
   </v-layout>
 </template>
 
@@ -17,7 +17,8 @@ import VContactForm from '@/components/VContactForm'
 
 export default {
   head() {
-    return this.$createSeo(this.$route.name)
+    // const meta = this.$store.state.pageMeta
+    return this.$store.state.pageMeta
   },
   components: { VContactForm }
 }
