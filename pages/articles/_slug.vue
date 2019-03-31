@@ -43,3 +43,12 @@ img {
 </style>
 <style src="@@/node_modules/prismjs/themes/prism-tomorrow.css">
 </style>
+
+<style lang="stylus">
+pre[class*=language-] {
+  font-size: 1.15rem;
+}
+code:after {
+  content: initial !important;
+}
+</style>
