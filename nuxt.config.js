@@ -1,3 +1,4 @@
+import emoji from 'markdown-it-emoji'
 import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 import { cmsRouteGenerator } from '@droyer/nuxtcms'
 import siteMeta from './config/meta'
@@ -46,9 +47,9 @@ export default {
 
   modules: ['@nuxtjs/pwa', 'nuxt-webfontloader', '@droyer/nuxtcms'],
 
-  // nuxtcms: {
-  //   api
-  // }
+  nuxtcms: {
+    markdownPlugins: [emoji]
+  },
   // '@nuxtjs/google-analytics'
   // 'google-analytics': {
   //   id: '123-your-id'
@@ -102,11 +103,11 @@ export default {
     routes: () => {
       const blogRoutes = cmsRouteGenerator(
         'articles',
-        require(`./static/api/articles`)
+        require(`./_API/articles`)
       )
       const projectRoutes = cmsRouteGenerator(
         'projects',
-        require(`./static/api/projects`)
+        require(`./_API/projects`)
       )
 
       return [...blogRoutes, ...projectRoutes]

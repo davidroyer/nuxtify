@@ -1,5 +1,6 @@
 <template>
   <v-footer
+    dark
     color="#373a47"
     height="auto"
     class="pt-2"

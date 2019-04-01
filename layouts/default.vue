@@ -41,6 +41,7 @@ export default {
 
 <style lang="stylus">
 .v-content
+  padding-top: 25px !important;
   padding-bottom: 25px !important;
   
   @media (min-width: 960px)

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-import siteNav from '@/static/api/main-nav'
-import { createDefaultMeta, createRouteMeta, setupRoutesMeta } from './helpers'
+import siteNav from '@cmsApi/main-nav'
 import Vue from 'vue'
+import { createDefaultMeta, createRouteMeta, setupRoutesMeta } from './helpers'
 
 setupRoutesMeta(siteNav)
 

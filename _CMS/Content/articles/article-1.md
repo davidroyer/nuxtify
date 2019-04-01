@@ -19,11 +19,11 @@ tags:
 ## I can't lie. This isss amazing!!!
 
 :::warning
-## Something special here! :computer: :key: :smile: :
+## Something special here! :computer: :key: :smile:
 :::
 
 :::tip
-Something special here! :computer: :key: :smile: :
+Something special here! :computer: :key: :smile:
 :::
 
 # heading 1sss

@@ -764,10 +764,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@droyer/nuxtcms@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@droyer/nuxtcms/-/nuxtcms-0.4.0.tgz#c37779b708d2f55b6594973073e50b65966113ce"
-  integrity sha512-o3t/ENlllro94gXo8mlUMzVnevmX2OLKNYPgnwPyzFX8Kcb39r5ymLxXA85pkQ9jBkwNnluJTSwBGu7T/ZFDAg==
+"@droyer/nuxtcms@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@droyer/nuxtcms/-/nuxtcms-0.4.1.tgz#05d0f25432663b42731c5078d5a251deb495bb7a"
+  integrity sha512-Adng5VkiCuFvJ+rf9MLiQBJlfTidJELtPow3+1skco1Od1iTQl3aRT/7vkMwfepmF0ZjPwFbpEPTFKTlw7zjxQ==
   dependencies:
     front-matter "^3.0.1"
     fs-jetpack "^2.2.1"
