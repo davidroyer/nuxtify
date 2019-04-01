@@ -1,10 +1,10 @@
 <template>
   <v-footer
-    dark
+    color="#373a47"
     height="auto"
-    class="primary pt-2"
+    class="pt-2"
   >
-    <v-card class="primary white--text text-xs-center " flat tile>
+    <v-card class="footer-inner-card white--text text-xs-center " flat tile>
       <v-card-text>
         <v-btn
           v-for="icon in icons"
@@ -57,5 +57,8 @@ export default {
 
 .email-link {
   font-size: 1.05rem;
+}
+.footer-inner-card {
+  background: inherit;
 }
 </style>
