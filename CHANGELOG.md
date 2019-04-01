@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.8.2"></a>
+## [0.8.2](https://github.com/davidroyer/nuxtify/compare/v0.8.1...v0.8.2) (2019-04-01)
+
+
+### Bug Fixes
+
+* fixes setup after nuxtcms upgrade ([bb66a34](https://github.com/davidroyer/nuxtify/commit/bb66a34))
+* sets correct primary color ([d29b250](https://github.com/davidroyer/nuxtify/commit/d29b250))
+
+
+
 <a name="0.8.1"></a>
 ## [0.8.1](https://github.com/davidroyer/nuxtify/compare/v0.8.0...v0.8.1) (2019-02-18)
 
