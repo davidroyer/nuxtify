@@ -1,7 +1,7 @@
 <template>
   <v-footer
     dark
-    color="#373a47"
+    color="primary"
     height="auto"
     class="pt-2"
   >

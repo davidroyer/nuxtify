@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import colors from 'vuetify/es5/util/colors'
 import Vuetify from 'vuetify/lib'
+import '@/theme/default.styl'
 
 Vue.use(Vuetify, {
   theme: {
@@ -10,8 +11,8 @@ Vue.use(Vuetify, {
     info: colors.teal.lighten1,
     warning: colors.amber.base,
     error: colors.deepOrange.accent4,
-    success: colors.green.accent3,
-    customName: colors.blueGrey.darken4
+    success: colors.green.accent3
+    // customName: colors.blueGrey.darken4
   },
   options: {
     customProperties: true
