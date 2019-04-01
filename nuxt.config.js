@@ -46,6 +46,9 @@ export default {
 
   modules: ['@nuxtjs/pwa', 'nuxt-webfontloader', '@droyer/nuxtcms'],
 
+  // nuxtcms: {
+  //   api
+  // }
   // '@nuxtjs/google-analytics'
   // 'google-analytics': {
   //   id: '123-your-id'
