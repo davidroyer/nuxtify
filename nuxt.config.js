@@ -1,6 +1,5 @@
 import emoji from 'markdown-it-emoji'
 import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
-import { cmsRouteGenerator } from '@droyer/nuxtcms'
 import siteMeta from './config/meta'
 import siteConfig from './config/site'
 import { addSvgLoader } from './utils'
@@ -99,18 +98,6 @@ export default {
     middleware: ['meta']
   },
   generate: {
-    fallback: true,
-    routes: () => {
-      const blogRoutes = cmsRouteGenerator(
-        'articles',
-        require(`./_API/articles`)
-      )
-      const projectRoutes = cmsRouteGenerator(
-        'projects',
-        require(`./_API/projects`)
-      )
-
-      return [...blogRoutes, ...projectRoutes]
-    }
+    fallback: true
   }
 }

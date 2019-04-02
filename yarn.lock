@@ -764,10 +764,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@droyer/nuxtcms@^0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@droyer/nuxtcms/-/nuxtcms-0.4.1.tgz#05d0f25432663b42731c5078d5a251deb495bb7a"
-  integrity sha512-Adng5VkiCuFvJ+rf9MLiQBJlfTidJELtPow3+1skco1Od1iTQl3aRT/7vkMwfepmF0ZjPwFbpEPTFKTlw7zjxQ==
+"@droyer/nuxtcms@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@droyer/nuxtcms/-/nuxtcms-0.5.4.tgz#870eca4ac96195682fa9fe48172872d2b853e13c"
+  integrity sha512-bFxM8onAe7TnFEArkv6gBGzQgeU8fVwfX0CyUY42Uhn1mH88WIGcp1dVZec/pfml1ApFpz5TnPPK+anUjGSX5g==
   dependencies:
     front-matter "^3.0.1"
     fs-jetpack "^2.2.1"
@@ -775,6 +775,7 @@
     markdown-it "^8.4.2"
     markdown-it-anchor "^5.0.2"
     markdown-it-container "^2.0.0"
+    markdown-it-custom-block "^0.1.1"
     markdown-it-deflist "^2.0.3"
     markdown-it-emoji "^1.4.0"
     markdown-it-link-attributes "^2.1.0"
@@ -5749,6 +5750,11 @@ markdown-it-container@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/markdown-it-container/-/markdown-it-container-2.0.0.tgz#0019b43fd02eefece2f1960a2895fba81a404695"
   integrity sha1-ABm0P9Au7+zi8ZYKKJX7qBpARpU=
+
+markdown-it-custom-block@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/markdown-it-custom-block/-/markdown-it-custom-block-0.1.1.tgz#91fc4a586290d36636c8aacb15fac793e9fe98a0"
+  integrity sha1-kfxKWGKQ02Y2yKrLFfrHk+n+mKA=
 
 markdown-it-deflist@^2.0.3:
   version "2.0.3"
