@@ -6,27 +6,32 @@
           Welcome to Nuxtify
         </v-card-title>
         <v-card-text>
-          <p>Nuxtify is a Nuxt.js Website Boilerplate with Vuetify. It aims to be reusable, reliable, and scalable.</p>
           <p>
-            For more information on Nuxtify, check out the <a
+            Nuxtify is a Nuxt.js Website Boilerplate with Vuetify. It aims to be
+            reusable, reliable, and scalable.
+          </p>
+          <p>
+            For more information on Nuxtify, check out the
+            <a
               class="font-weight-medium"
               href="https://github.com/davidroyer/nuxtify"
               target="_blank"
               rel="noopener"
             >
-              github repo
-            </a>.
+              github repo </a
+            >.
           </p>
           <p>
-            You can also check out an <a
+            You can also check out an
+            <a
               class="font-weight-medium"
               href="https://www.davidroyer.me/blog/nuxtify"
               target="_blank"
               rel="noopener"
               title="blog article"
             >
-              intro blog article 
-            </a>.
+              intro blog article </a
+            >.
           </p>
           <p>Thanks for checking out of my projects and happy coding.</p>
           <div class="text-xs-right">

@@ -1,4 +1,44 @@
+// NOTE: THIS SEEM TO WORK AND HAVE GOOD UPDATES
+$font-size-root = 15px
+// $body-font-family = 'Open Sans'
+$alert-font-size = 18px
+$button-font-size = 16px
+
 @require '~vuetify/src/stylus/app.styl'
+// @import '~vuetify/src/stylus/main.styl'
+
+body
+  font-family: $body-font-family
+  font-size: $font-size-root
+  font-weight: $font-weights.regular
+  line-height: $line-height-root
+h1
+  font-size: 42px
+  font-weight: $font-weights.thin
+  letter-spacing: -0.05rem
+
+h2
+  font-size: 32px
+  font-weight: $font-weights.light
+  letter-spacing: -0.025rem
+
+h3 
+  font-size: 20px
+  font-weight: $font-weights.light
+  letter-spacing: normal
+
+h4 
+  font-size: 20px
+  font-weight: $font-weights.light
+  letter-spacing: normal  
+h5 
+  font-size: 16px
+  font-weight: $font-weights.regular
+  letter-spacing: normal  
+
+
+
+
 
 .v-navigation-drawer .v-list__tile--link > .v-list__tile__title
     font-size: 1.1rem;
@@ -16,3 +56,20 @@
     opacity: 0;
     transform: translate(10px, 0);
   }
+
+  // Fix Style issues that Vuetify is messing up by overriding
+
+.custom-block
+  p
+    margin-top 1em !important
+  
+  &-title
+    margin-top 1em !important
+    font-size: 16px !important
+
+  &.warning
+    background-color: rgba(255, 229, 100, 0.3) !important;
+    border-color: #e7c000 !important;
+
+code:before
+  content: none;

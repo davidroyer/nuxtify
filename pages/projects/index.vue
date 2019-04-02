@@ -1,6 +1,10 @@
 <template>
   <div>
-    <nuxt-link v-for="project in projects" :key="project.slug" :to="`/projects/${project.slug}`">
+    <nuxt-link
+      v-for="project in projects"
+      :key="project.slug"
+      :to="`/projects/${project.slug}`"
+    >
       {{ project.title }}
     </nuxt-link>
     <pre>{{ projects }}</pre>

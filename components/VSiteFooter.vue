@@ -1,10 +1,5 @@
 <template>
-  <v-footer
-    dark
-    color="#2b283dcc"
-    height="auto"
-    class="pt-2"
-  >
+  <v-footer dark color="#2b283de0" height="auto" class="pt-2">
     <v-layout>
       <v-card class="footer-inner-card white--text text-xs-center " flat tile>
         <v-card-text>
@@ -14,19 +9,31 @@
             :aria-label="`Link to our ${icon} page`"
             icon
           >
-            <component :is="icon" width="30px" :alt="`Image icon for ${icon}`" role="presentation" />
+            <component
+              :is="icon"
+              width="30px"
+              :alt="`Image icon for ${icon}`"
+              role="presentation"
+            />
           </v-btn>
         </v-card-text>
 
         <v-card-text class="pt-0">
           <h3>Email Us</h3>
-          <a class="email-link white--text darken-2" href="mailto:site-email@yoursiteurl.com?Subject=Hello" target="_top">
+          <a
+            class="email-link white--text darken-2"
+            href="mailto:site-email@yoursiteurl.com?Subject=Hello"
+            target="_top"
+          >
             info@yoursiteurl.com
           </a>
         </v-card-text>
 
-        <v-card-text class="white--text pt-0">     
-          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui.
+        <v-card-text class="white--text pt-0">
+          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
+          Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
+          accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim
+          a sit amet dui.
         </v-card-text>
 
         <v-divider />

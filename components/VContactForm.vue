@@ -33,11 +33,7 @@
           required
         />
 
-        <v-btn
-          :disabled="!valid"
-          color="info"
-          @click="validate"
-        >
+        <v-btn :disabled="!valid" color="info" @click="validate">
           Validate
         </v-btn>
 
@@ -50,10 +46,10 @@
         </v-btn>
         <v-btn color="primary" @click="reset">
           Submit
-        </v-btn>        
-      </v-form>  
+        </v-btn>
+      </v-form>
       <!-- </v-card>     -->
-    </v-flex>    
+    </v-flex>
   </v-layout>
 </template>
 

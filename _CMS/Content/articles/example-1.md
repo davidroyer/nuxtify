@@ -1,10 +1,9 @@
 __Advertisement :)__
 
 # EXAMPLE 1
-# EXAMPLE 1
 
 ::: warning
-*here be dragons*
+ *here be dragons*
 :::
 
 - __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image
@@ -35,11 +34,6 @@ You will like those projects!
 ## Horizontal Rules
 
 ___
-
----
-
-***
-
 
 ## Typographic replacements
 

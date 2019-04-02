@@ -5,7 +5,7 @@
         <h1 class="display-1" text-xs-center>
           Get In Touch
         </h1>
-      </div>      
+      </div>
       <v-contact-form />
     </v-flex>
     <!-- </v-contact-form> -->

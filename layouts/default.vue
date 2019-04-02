@@ -11,7 +11,7 @@
           </v-flex>
         </v-layout>
       </v-container>
-    </v-jumbotron>    
+    </v-jumbotron>
     <v-site-content />
     <v-mobile-nav />
     <v-site-footer />
@@ -42,11 +42,10 @@ export default {
 .v-content
   padding-top: 25px !important;
   padding-bottom: 25px !important;
-  
+
   @media (min-width: 960px)
     padding-bottom: 50px!important;
-  
+
   &__wrap
     padding-top: 1em;
-    
 </style>

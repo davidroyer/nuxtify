@@ -9,14 +9,9 @@
       {{ route.label }}
     </v-btn> -->
     <!-- <pre>{{ nav }}</pre> -->
-    <v-btn
-      v-for="(route, key) in nav"
-      :key="key"
-      flat
-      :to="route.to"
-    >
+    <v-btn v-for="(route, key) in nav" :key="key" flat :to="route.to">
       {{ route.label }}
-    </v-btn>    
+    </v-btn>
   </v-toolbar-items>
 </template>
 

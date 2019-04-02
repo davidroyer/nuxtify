@@ -1,5 +1,5 @@
 ---
-title: Article 1a
+title: Article 1
 date: 12-04-2019
 description:
     Some basic description for this article to use as aan excerpt.
@@ -12,19 +12,23 @@ tags:
     - tag 5
 ---
 
-# Heading 1!
+# Heading 1!asss
 
 `inline code test`
 
-## I can't lie. This isss amazing!!!
+## I can't lie. This isss amazing!!! :computer:  :smile:
+
+---
 
 :::warning
-## Something special here! :computer: :key: :smile:
+:warning: Something you should know about
 :::
 
 :::tip
-Something special here! :computer: :key: :smile:
+:thumbsup: Something that's will be the key to your success
 :::
+
+
 
 # heading 1sss
 
@@ -52,7 +56,7 @@ abqaa
 This is a dangerous warning
 :::
 
-::: danger STOP
+:::danger STOP :wrench:
 Danger zone, do not proceed!
 :::
 
@@ -63,6 +67,7 @@ Danger zone, do not proceed!
 ![Image Test](~/assets/hero1.png) -->
 
 # heading 1as
+
 
 ## Heading 2aaass
 
