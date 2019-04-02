@@ -33,7 +33,7 @@ export default {
   },
   data: () => ({
     gradient:
-      '141deg,rgba(62,66,100,.65098),rgba(32,35,58,.75),71%,rgba(62,66,100,.65098)'
+      '141deg,rgba(62, 66, 100, 0.35),rgba(32, 35, 58, 0.5),90%,rgba(62, 66, 100, 0.35)'
     // gradient: 'to top, #7B1FA2, #E1BEE7'
   })
 }
